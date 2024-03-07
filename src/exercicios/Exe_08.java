@@ -9,7 +9,7 @@ public class Exe_08 {
 		
 		double av1, av2, av3, totalAv, media;
 		int pesoAv1 = 1, pesoAv2 = 2, pesoAv3 = 3, totalPeso;
-		DecimalFormat df= new DecimalFormat("#.##");
+		DecimalFormat df = new DecimalFormat("#.##");
 		
 		System.out.println("Informe a nota da sua Primeira Avalição");
 		av1 = s.nextDouble();
