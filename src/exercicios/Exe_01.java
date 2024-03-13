@@ -9,6 +9,7 @@ public class Exe_01 {
 		
 		System.out.println("Informe a altura do retângulo");
 		altura = s.nextInt();	
+		
 		System.out.println("Informe a altura do largura");
 		largura = s.nextInt();
 		
@@ -17,3 +18,8 @@ public class Exe_01 {
 		System.out.println("A área do seu retângulo é: " + area);
 	}
 }
+
+/*
+ 	1. A imobiliária Imóbilis vende apenas terrenos retangulares. Faça um algoritmo para ler as
+	dimensões de um terreno e depois exibir a área do terreno. 
+*/

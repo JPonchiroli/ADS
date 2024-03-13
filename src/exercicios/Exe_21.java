@@ -11,8 +11,10 @@ public class Exe_21 {
 		
 		System.out.println("Informe a quantidade de latas de 350 ml");
 		qtdlataP = s.nextDouble();
+		
 		System.out.println("Informe a quantidade de latas de 600 ml");
 		qtdlataM = s.nextDouble();
+		
 		System.out.println("Informe a quantidade de latas de 2 L");
 		qtdgarrafa = s.nextDouble();
 		
@@ -21,3 +23,8 @@ public class Exe_21 {
 		System.out.println("O total em litros é de: " + totalLitros + " L");
 	}
 }
+/*
+	21. A fábrica de refrigerantes Meia-Cola vende seu produto em três formatos: lata de 350 ml,
+	garrafa de 600 ml e garrafa de 2 litros. Se um comerciante compra uma determinada quantidade
+	de cada formato, faça um algoritmo para calcular quantos litros de refrigerante ele comprou.
+*/

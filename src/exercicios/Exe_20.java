@@ -16,3 +16,7 @@ public class Exe_20 {
 		System.out.println("A quantidade de Novelos necessária para produzir " + qtdCamisas + " camisasa é de: " + qtdNovelos);
 	}
 }
+/*
+	20. Uma confecção produz X blusas de lã e para isto gasta uma certa quantidade de novelos. Faça
+	um algoritmo para calcular quantos novelos de lã ela gasta por blusa.
+*/

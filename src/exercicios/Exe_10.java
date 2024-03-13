@@ -12,10 +12,13 @@ public class Exe_10 {
 		
 		System.out.println("Informe o valor do ponto X1");
 		x1 = s.nextDouble();
+		
 		System.out.println("Informe o valor do ponto X2");
 		x2 = s.nextDouble();
+		
 		System.out.println("Informe o valor do ponto Y1");
 		y1 = s.nextDouble();
+		
 		System.out.println("Informe o valor do ponto Y1");
 		y2 = s.nextDouble();
 		
@@ -28,3 +31,7 @@ public class Exe_10 {
 		System.out.println("Distância entre os pontos é " + raizQuadrada);
 	}
 }
+/*
+	10. Construa um algoritmo para calcular a distância entre dois pontos do plano cartesiano. Cada
+	ponto é um par ordenado (x,y).
+*/

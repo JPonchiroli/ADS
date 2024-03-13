@@ -16,3 +16,7 @@ public class Exe_02 {
 		System.out.println("A quantidade de ferraduras necessárias são: " + numFerraduras);
 	}
 }
+/* 
+	2. Faça um algoritmo para calcular quantas ferraduras são necessárias para equipar todos os
+	cavalos comprados para um haras.
+*/
