@@ -6,7 +6,20 @@ public class Exe_16 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		
+		double a, b, c, delta;
 		
+		System.out.println("Informe o valor de a");
+		a = s.nextDouble();
+		
+		System.out.println("Informe o valor de b");
+		b = s.nextDouble();
+		
+		System.out.println("Informe o valor de c");
+		c = s.nextDouble();
+		
+		delta = (b * b) - (4 * (a * c));
+		
+		System.out.println("Delta" + delta);
 	}
 }
 /*
