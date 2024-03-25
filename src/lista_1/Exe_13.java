@@ -6,7 +6,7 @@ public class Exe_13 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		
-		int valor = 0;
+		int valor = 10;
 	
 		while(valor < 99 && valor > 999) {
 			System.out.println("Informe um número");
