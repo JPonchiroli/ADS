@@ -6,9 +6,9 @@ public class Exe_13 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		
-		int valor = 10;
+		int valor = 0;
 	
-		while(valor < 99 && valor > 999) {
+		while(valor < 99 || valor > 999) {
 			System.out.println("Informe um número");
 			valor = s.nextInt();
 			
@@ -20,9 +20,14 @@ public class Exe_13 {
 		}
 		
 		String valorConvertido = Integer.toString(valor);
-		char centena = valorConvertido.charAt(0);
-		char dezena = valorConvertido.charAt(1);
-		char unidade = valorConvertido.charAt(2);
+		char centena = 0;
+		char dezena = 0;
+		char unidade = 0;
+		
+		
+		centena = valorConvertido.charAt(0);
+		dezena = valorConvertido.charAt(1);
+		unidade = valorConvertido.charAt(2);
 		
 		System.out.println("CENTENA: " + centena + 00);
 		System.out.println("DEZENA: " + dezena + 0);
