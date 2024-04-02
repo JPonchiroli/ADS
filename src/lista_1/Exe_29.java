@@ -6,14 +6,14 @@ public class Exe_29 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		
-		double precoProduto, qtdDesconto = 0.1, precoFinal;
+		double precoProduto, qtdDesconto = 0.1, precoTotal;
 		
 		System.out.println("Informe o preço do produto");
 		precoProduto = s.nextDouble();
 		
-		precoFinal = precoProduto - (precoProduto * qtdDesconto);
+		precoTotal = precoProduto - (precoProduto * qtdDesconto);
 		
-		System.out.println("Preço do Produto com Desconto: " + precoFinal);
+		System.out.println("Preço do Produto com Desconto: " + precoTotal);
 	}
 }
 /*
