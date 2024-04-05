@@ -1,4 +1,4 @@
-package lista_oficial;
+package lista_official;
 
 import java.util.Scanner;
 
