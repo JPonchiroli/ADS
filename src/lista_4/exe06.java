@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class exe06 {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		int priTerm, razao, num;
+        
+        System.out.print("Digite o primeiro termo da PG: ");
+        priTerm = s.nextInt();
+        
+        System.out.print("Digite a razão da PG: ");
+        razao = s.nextInt();
+        
+        System.out.print("Digite o número de termos a serem impressos: ");
+        num = s.nextInt();
+        
+        int atual = priTerm;
+        for (int i = 0; i < num; i++) {
+            System.out.print(atual + " ");
+            atual *= razao;
+
+        }
+    }
+}
