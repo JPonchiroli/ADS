@@ -1,3 +1,5 @@
+package Classes;
+
 public class ContaBancaria extends Pessoa{
     private int numeroBanco;
     private int numeroAgencia;
@@ -6,7 +8,7 @@ public class ContaBancaria extends Pessoa{
     private boolean movimentacao;
     private boolean contaAtiva;
 
-    public ContaBancaria(int CPF, String nome, int telefone, int numeroBanco, int numeroAgencia, int numeroConta, double saldoConta, boolean movimentacao, boolean contaAtiva) {
+    public ContaBancaria(long CPF, String nome, long telefone, int numeroBanco, int numeroAgencia, int numeroConta, double saldoConta, boolean movimentacao, boolean contaAtiva) {
         super(CPF, nome, telefone);
         this.numeroBanco = numeroBanco;
         this.numeroAgencia = numeroAgencia;
