@@ -50,6 +50,22 @@ public class Utils {
         return true;
     }
 
+    public static boolean TelefoneValido(String Telefone){
+
+        String primeiraPosicao = String.valueOf(Telefone.charAt(0)), terceiraPosicao = String.valueOf(Telefone.charAt(2));
+
+        if(primeiraPosicao.equals("0") || !terceiraPosicao.equals("9")){
+            return false;
+        }
+
+        if(Telefone.length() != 11){
+            return false;
+        }
+
+        return true;
+    }
+
+
     public static String Fill(String Str, char Chr, FillSide Lado, int Tamanho)
     {
         String Aux = Str;
