@@ -5,6 +5,11 @@ import Enumerados.FillSide;
 public class Utils {
 
     public static final String MascaraCPF = "$1.$2.$3-4";
+    public static final String MascaraFone = "($1) $2-$3";
+
+    public static final String RegExCpf = "(\\d{3})(\\d{3})(\\d{3})(\\d{2})";
+
+    public static final String RegExFoneMovel = "(\\d{2})(\\d{5})(\\d{4})";
     public static boolean CPFValido(String CPF){
 
         String Aux = CPF.replaceAll("[^0-9]", "");

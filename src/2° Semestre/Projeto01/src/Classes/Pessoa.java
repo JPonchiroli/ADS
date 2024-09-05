@@ -3,8 +3,7 @@ package Classes;
 import Enumerados.FillSide;
 import Utils.Utils;
 
-import static Utils.Utils.CPFValido;
-import static Utils.Utils.MascaraCPF;
+import static Utils.Utils.*;
 
 public class Pessoa {
 
@@ -18,9 +17,13 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
+    public Pessoa() {
+
+    }
+
     public String getCPF() {
         String aux = Utils.Fill(Long.toString(this.CPF), '0', FillSide.fsEsquerda, 11);
-        return aux.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})",MascaraCPF);
+        return aux.replaceAll(RegExCpf, MascaraCPF);
     }
 
     public void setCPF(String CPF) {
@@ -39,10 +42,13 @@ public class Pessoa {
     }
 
     public String getTelefone() {
-        return Long.toString(telefone);
+        String aux = Utils.Fill(Long.toString(this.telefone), '0', FillSide.fsEsquerda, 11);
+        return aux.replaceAll(RegExFoneMovel, MascaraFone);
     }
 
-    public void setTelefone(long telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) {
+        if(TelefoneValido(telefone)){
+            this.telefone = Long.parseLong(telefone.replaceAll("[^0-9]", ""));
+        }
     }
 }
