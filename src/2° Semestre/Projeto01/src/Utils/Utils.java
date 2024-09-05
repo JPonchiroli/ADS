@@ -6,9 +6,7 @@ public class Utils {
 
     public static final String MascaraCPF = "$1.$2.$3-4";
     public static final String MascaraFone = "($1) $2-$3";
-
     public static final String RegExCpf = "(\\d{3})(\\d{3})(\\d{3})(\\d{2})";
-
     public static final String RegExFoneMovel = "(\\d{2})(\\d{5})(\\d{4})";
     public static boolean CPFValido(String CPF){
 
@@ -55,17 +53,30 @@ public class Utils {
         return true;
     }
 
-    public static boolean TelefoneValido(String Telefone){
+    public static boolean EhTelefoneValido(String Telefone)
+    {
+        final String DDDsValidos = "11-12-13-14-15-16-17-18-19-" +
+                "21-22-24-27-28-31-32-33-34-" +
+                "35-37-38-41-42-43-44-45-46-" +
+                "47-48-49-51-53-54-55-61-62-" +
+                "63-64-65-66-67-68-69-71-73-" +
+                "74-75-77-79-81-82-83-84-85-" +
+                "86-87-88-89-91-92-93-94-95-" +
+                "96-97-98-99";
+        String Aux = Telefone.replaceAll("[^0-9]", "");
 
-        String primeiraPosicao = String.valueOf(Telefone.charAt(0)), terceiraPosicao = String.valueOf(Telefone.charAt(2));
-
-        if(primeiraPosicao.equals("0") || !terceiraPosicao.equals("9")){
+        if ((Aux.length() != 10) && (Aux.length() != 11))
             return false;
-        }
 
-        if(Telefone.length() != 11){
+        if (!DDDsValidos.contains(Aux.substring(0, 2)))
             return false;
-        }
+
+        if (((Aux.length() == 11) && ("12345".contains(Aux.substring(2, 3)))) ||
+                ((Aux.length() == 10) && ("16789".contains(Aux.substring(2, 3)))))
+            return false;
+
+        if ("0000".equals(Aux.substring(Aux.length() - 4, Aux.length())))
+            return false;
 
         return true;
     }
