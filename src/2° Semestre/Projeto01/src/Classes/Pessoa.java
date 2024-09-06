@@ -30,7 +30,6 @@ public class Pessoa {
         if(CPFValido(CPF)){
             this.CPF = Long.parseLong(CPF.replaceAll("[^0-9]", ""));
         }
-
     }
 
     public String getNome() {

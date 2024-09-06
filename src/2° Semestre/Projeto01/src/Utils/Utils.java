@@ -53,7 +53,7 @@ public class Utils {
         return true;
     }
 
-    public static boolean EhTelefoneValido(String Telefone)
+    public static boolean TelefoneValido(String Telefone)
     {
         final String DDDsValidos = "11-12-13-14-15-16-17-18-19-" +
                 "21-22-24-27-28-31-32-33-34-" +

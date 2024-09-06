@@ -1,49 +1,76 @@
 package Classes;
 
-public class ContaBancaria extends Pessoa{
+import Enumerados.FillSide;
+import Utils.Utils;
+
+import static Utils.Utils.*;
+
+public abstract class ContaBancaria{
+
+    private long  CPF;
     private int numeroBanco;
     private int numeroAgencia;
-    private int numeroConta;
+    private String numeroConta;
     private double saldoConta;
     private boolean movimentacao;
     private boolean contaAtiva;
 
-    public ContaBancaria(long CPF, String nome, long telefone, int numeroBanco, int numeroAgencia, int numeroConta, double saldoConta, boolean movimentacao, boolean contaAtiva) {
-        super(CPF, nome, telefone);
+    public ContaBancaria(){
+        this.contaAtiva = true;
+        this.saldoConta = 0;
+    }
+    public ContaBancaria(long CPF, int numeroBanco, int numeroAgencia, String numeroConta, double saldoConta, boolean movimentacao, boolean contaAtiva) {
+        this.CPF = CPF;
         this.numeroBanco = numeroBanco;
         this.numeroAgencia = numeroAgencia;
         this.numeroConta = numeroConta;
-        this.saldoConta = saldoConta;
         this.movimentacao = movimentacao;
-        this.contaAtiva = contaAtiva;
+        this.contaAtiva = true;
+        this.saldoConta = 0;
     }
 
-    public double Sacar(double valorSacado){
+    public void AumentarValor(double valorSacado){
         double valorFinal = saldoConta - valorSacado;
-        if(valorFinal < 0){
+        if(valorFinal < 0 && this.contaAtiva){
             System.out.println("Operação Inválida!");
         } else {
             saldoConta -= valorSacado;
         }
-
-        return saldoConta;
     }
 
-    public double Depositar(double valorSacado){
+    public void DiminuirValor(double valorSacado){
         double valorFinal = saldoConta + valorSacado;
-        if(valorFinal < 0){
+        if(this.contaAtiva){
             System.out.println("Operação Inválida!");
         } else {
             saldoConta += valorSacado;
         }
-
-        return saldoConta;
     }
 
     public void ImprimirExtrato(){
         System.out.println("Extrato Atual: " + saldoConta);
     }
 
+    public void EncerrarConta(){
+        if(this.contaAtiva ){
+            if(this.getSaldoConta() != 0) {
+                DiminuirValor(this.getSaldoConta());
+            }
+            DiminuirValor(this.getSaldoConta());
+        }
+    }
+
+
+    public String getCPF() {
+        String aux = Utils.Fill(Long.toString(this.CPF), '0', FillSide.fsEsquerda, 11);
+        return aux.replaceAll(RegExCpf, MascaraCPF);
+    }
+
+    public void setCPF(String CPF) {
+        if(CPFValido(CPF)){
+            this.CPF = Long.parseLong(CPF.replaceAll("[^0-9]", ""));
+        }
+    }
     public int getNumeroBanco() {
         return numeroBanco;
     }
@@ -60,20 +87,16 @@ public class ContaBancaria extends Pessoa{
         this.numeroAgencia = numeroAgencia;
     }
 
-    public int getNumeroConta() {
+    public String getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(int numeroConta) {
+    public void setNumeroConta(String numeroConta) {
         this.numeroConta = numeroConta;
     }
 
     public double getSaldoConta() {
         return saldoConta;
-    }
-
-    public void setSaldoConta(double saldoConta) {
-        this.saldoConta = saldoConta;
     }
 
     public boolean isMovimentacao() {
