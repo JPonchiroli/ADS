@@ -3,6 +3,8 @@ package Classes;
 import Enumerados.FillSide;
 import Utils.Utils;
 
+import java.security.spec.ECField;
+
 import static Utils.Utils.*;
 
 public class Pessoa {
@@ -17,8 +19,8 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public Pessoa() {
-
+    public Pessoa(String nome) {
+        this.nome = nome;
     }
 
     public String getCPF() {
@@ -26,9 +28,11 @@ public class Pessoa {
         return aux.replaceAll(RegExCpf, MascaraCPF);
     }
 
-    public void setCPF(String CPF) {
+    public void setCPF(String CPF) throws Exception {
         if(CPFValido(CPF)){
             this.CPF = Long.parseLong(CPF.replaceAll("[^0-9]", ""));
+        } else {
+            throw new Exception("CPF Inválido");
         }
     }
 
@@ -45,9 +49,20 @@ public class Pessoa {
         return aux.replaceAll(RegExFoneMovel, MascaraFone);
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(String telefone) throws Exception {
         if(TelefoneValido(telefone)){
             this.telefone = Long.parseLong(telefone.replaceAll("[^0-9]", ""));
+        } else {
+            throw new Exception("Telefone Inválido");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "CPF=" + CPF +
+                ", nome='" + nome + '\'' +
+                ", telefone=" + telefone +
+                '}';
     }
 }

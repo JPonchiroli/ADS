@@ -114,4 +114,17 @@ public abstract class ContaBancaria{
     public void setContaAtiva(boolean contaAtiva) {
         this.contaAtiva = true;
     }
+
+    @Override
+    public String toString() {
+        return "ContaBancaria{" +
+                "CPF=" + CPF +
+                ", numeroBanco=" + numeroBanco +
+                ", numeroAgencia=" + numeroAgencia +
+                ", numeroConta='" + numeroConta + '\'' +
+                ", saldoConta=" + saldoConta +
+                ", movimentacao=" + movimentacao +
+                ", contaAtiva=" + contaAtiva +
+                '}';
+    }
 }
