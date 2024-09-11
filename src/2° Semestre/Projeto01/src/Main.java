@@ -1,7 +1,7 @@
 import Classes.Pessoa;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Pessoa pes = new Pessoa();
 
         pes.setCPF("10909208905");

@@ -23,6 +23,10 @@ public class Pessoa {
         this.nome = nome;
     }
 
+    public Pessoa() {
+
+    }
+
     public String getCPF() {
         String aux = Utils.Fill(Long.toString(this.CPF), '0', FillSide.fsEsquerda, 11);
         return aux.replaceAll(RegExCpf, MascaraCPF);
