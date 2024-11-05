@@ -1,4 +1,4 @@
-package Entidades.Enums;
+package Modelo.Entidades.Enums;
 
 public enum TipoTelefoneEnum {
     MOVEL(1),

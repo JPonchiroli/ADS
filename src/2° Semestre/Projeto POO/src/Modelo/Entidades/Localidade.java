@@ -1,4 +1,4 @@
-package Entidades;
+package Modelo.Entidades;
 
 public class Localidade {
     private Long CEP;

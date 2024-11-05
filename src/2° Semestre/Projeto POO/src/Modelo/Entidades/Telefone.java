@@ -1,6 +1,6 @@
-package Entidades;
+package Modelo.Entidades;
 
-import Entidades.Enums.TipoTelefoneEnum;
+import Modelo.Entidades.Enums.TipoTelefoneEnum;
 
 public class Telefone {
     private Long id;

@@ -1,6 +1,6 @@
-package Entidades;
+package Modelo.Entidades;
 
-import Entidades.Enums.SexoEnum;
+import Modelo.Entidades.Enums.SexoEnum;
 
 import java.util.Date;
 

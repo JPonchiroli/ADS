@@ -1,4 +1,4 @@
-package Entidades.Enums;
+package Modelo.Entidades.Enums;
 
 public enum SituacaoEnum {
     ATIVO(1),
