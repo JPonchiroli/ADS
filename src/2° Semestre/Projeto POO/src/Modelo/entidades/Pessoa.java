@@ -1,6 +1,6 @@
-package Modelo.Entidades;
+package Modelo.entidades;
 
-import Modelo.Entidades.Enums.SituacaoEnum;
+import Modelo.entidades.enums.SituacaoEnum;
 
 public class Pessoa {
     private Long id;

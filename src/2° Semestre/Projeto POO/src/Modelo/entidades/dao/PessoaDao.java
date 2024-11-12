@@ -1,6 +1,6 @@
-package Modelo.Entidades.Dao;
+package Modelo.entidades.dao;
 
-import Modelo.Entidades.Pessoa;
+import Modelo.entidades.Pessoa;
 
 import java.util.List;
 

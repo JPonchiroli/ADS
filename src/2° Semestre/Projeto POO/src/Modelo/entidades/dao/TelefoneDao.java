@@ -1,6 +1,6 @@
-package Modelo.Entidades.Dao;
+package Modelo.entidades.dao;
 
-import Modelo.Entidades.Telefone;
+import Modelo.entidades.Telefone;
 
 import java.util.List;
 

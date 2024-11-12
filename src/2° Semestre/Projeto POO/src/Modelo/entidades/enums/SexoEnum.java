@@ -1,4 +1,4 @@
-package Modelo.Entidades.Enums;
+package Modelo.entidades.enums;
 
 public enum SexoEnum {
     MASCULINO(1),
