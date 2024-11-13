@@ -2,7 +2,7 @@ package Modelo.entidades;
 
 import java.util.Date;
 
-public class ContaEspecial{
+public class ContaEspecial extends ContaCorrente{
     private double limitecredito;
     private Date datavctocontrato;
 
