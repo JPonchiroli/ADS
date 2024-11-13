@@ -1,0 +1,50 @@
+create database trabalho_poo;
+
+create user "joao" identified by '123';
+grant all privileges on trabalho_poo.* to joao;
+
+-- Criando a tabela Localidade
+CREATE TABLE Localidade (
+    cep long,
+    estado VARCHAR(100),
+    cidade VARCHAR(100),
+    bairro VARCHAR(100),
+    logradouro VARCHAR(200)
+);
+
+-- Criando a tabela Pessoa
+CREATE TABLE Pessoa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numeroEnderecos INT,
+    complementoEnd VARCHAR(100),
+    situacao INT
+);
+
+-- Criando a tabela Telefone
+CREATE TABLE Telefone (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero VARCHAR(20),
+    tipo VARCHAR(20),
+    pessoa_id INT,
+    FOREIGN KEY (pessoa_id) REFERENCES Pessoa(id)
+);
+
+-- Criando a tabela PessoaFisica
+CREATE TABLE PessoaFisica (
+    id INT PRIMARY KEY,
+    cpf VARCHAR(11),
+    nome VARCHAR(100),
+    dtNasc DATE,
+    sexo INT,
+    FOREIGN KEY (id) REFERENCES Pessoa(id)
+);
+
+-- Criando a tabela PessoaJuridica
+CREATE TABLE PessoaJuridica (
+    id INT PRIMARY KEY,
+    cnpj VARCHAR(14),
+    razaoSocial VARCHAR(200),
+    inscEstadual VARCHAR(20),
+    fantasia VARCHAR(100),
+    FOREIGN KEY (id) REFERENCES Pessoa(id)
+);

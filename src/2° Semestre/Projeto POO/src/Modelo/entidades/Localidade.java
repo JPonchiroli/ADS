@@ -5,16 +5,16 @@ public class Localidade {
     private String estado;
     private String cidade;
     private String bairro;
-    private String logadouro;
+    private String logradouro;
 
     public Localidade(){}
 
-    public Localidade(Long CEP, String estado, String cidade, String bairro, String logadouro) {
+    public Localidade(Long CEP, String estado, String cidade, String bairro, String logradouro) {
         this.CEP = CEP;
         this.estado = estado;
         this.cidade = cidade;
         this.bairro = bairro;
-        this.logadouro = logadouro;
+        this.logradouro = logradouro;
     }
 
     public Long getCEP() {
@@ -49,12 +49,12 @@ public class Localidade {
         this.bairro = bairro;
     }
 
-    public String getLogadouro() {
-        return logadouro;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setLogadouro(String logadouro) {
-        this.logadouro = logadouro;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Localidade {
                 ", estado: '" + estado +
                 ", cidade: " + cidade +
                 ", bairro: " + bairro +
-                ", logadouro: " + logadouro +
+                ", logradouro: " + logradouro +
                 ']';
     }
 }

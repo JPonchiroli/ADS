@@ -5,7 +5,7 @@ import Modelo.entidades.Localidade;
 import java.util.List;
 
 public interface LocalidadeDao {
-    void inserir();
+    void inserir(Localidade loc);
     Localidade buscarPorCEP(Long CEP);
     List<Localidade> buscarTodos();
 
