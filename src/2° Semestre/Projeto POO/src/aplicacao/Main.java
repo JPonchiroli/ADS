@@ -1,14 +1,18 @@
 package aplicacao;
 
 import Modelo.entidades.Localidade;
+import Modelo.entidades.PessoaFisica;
 import Modelo.entidades.Telefone;
 import Modelo.entidades.dao.DaoFactory;
 import Modelo.entidades.dao.LocalidadeDao;
+import Modelo.entidades.dao.PessoaFisicaDao;
 import Modelo.entidades.dao.TelefoneDao;
 import Modelo.entidades.dao.impl.LocalidadeDaoJDBC;
 import db.DB;
 
 import java.sql.Connection;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +31,14 @@ public class Main {
         telefoneDao.inserir(telefone);
         */
         //--------------------------------------------------------------------------------------------------------------
-        // Telefone
+        // Pessoa Fisica
+        PessoaFisicaDao pessoaFisicaDao = DaoFactory.createPesosaFisicaDao();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2006, Calendar.MARCH, 27);
+        Date dtNasc = calendar.getTime();
+
+        PessoaFisica pessoaFisica = new PessoaFisica(10909208905l, "Joao Ponchiroli", dtNasc, "Masculino");
+        pessoaFisicaDao.inserir(pessoaFisica);
 
 
     }

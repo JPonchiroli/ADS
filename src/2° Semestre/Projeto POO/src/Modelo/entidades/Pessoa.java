@@ -1,17 +1,16 @@
 package Modelo.entidades;
 
-import Modelo.entidades.enums.SituacaoEnum;
 
 public class Pessoa {
     private Long id;
     private Localidade cep;
     private int numeroEnd;
     private String complementoEnd;
-    private int situacao;
+    private String situacao;
 
     public Pessoa(){}
 
-    public Pessoa(Long id, Localidade cep, int numeroEnd, String complementoEnd, SituacaoEnum situacao) {
+    public Pessoa(Long id, Localidade cep, int numeroEnd, String complementoEnd, String situacao) {
         this.id = id;
         this.cep = cep;
         this.numeroEnd = numeroEnd;
@@ -51,14 +50,12 @@ public class Pessoa {
         this.complementoEnd = complementoEnd;
     }
 
-    public SituacaoEnum getSituacao() {
-        return SituacaoEnum.valueOf(situacao);
+    public String getSituacao() {
+        return situacao;
     }
 
-    public void setSituacao(SituacaoEnum situacao) {
-        if (situacao != null){
-            this.situacao = situacao.getCodigo();
-        }
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
 
     @Override

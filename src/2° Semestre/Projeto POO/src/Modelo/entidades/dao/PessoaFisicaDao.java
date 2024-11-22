@@ -5,7 +5,7 @@ import Modelo.entidades.PessoaFisica;
 import java.util.List;
 
 public interface PessoaFisicaDao {
-    void inserir();
+    void inserir(PessoaFisica pf);
     PessoaFisica buscarPorCPF(Long CPF);
     List<PessoaFisica> buscarTodos();
 

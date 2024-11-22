@@ -1,23 +1,22 @@
 package Modelo.entidades;
 
-import Modelo.entidades.enums.SexoEnum;
-
 import java.util.Date;
 
 public class PessoaFisica extends Pessoa{
+
     private Long CPF;
     private String nome;
     private Date dtNasc;
 
-    private Integer sexo;
+    private String sexo;
 
     public PessoaFisica(){}
 
-    public PessoaFisica(Long CPF, String nome, Date dtNasc, SexoEnum sexo) {
+    public PessoaFisica(Long CPF, String nome, Date dtNasc, String sexo) {
         this.CPF = CPF;
         this.nome = nome;
         this.dtNasc = dtNasc;
-        setSexo(sexo);
+        this.sexo = sexo;
     }
 
     public Long getCPF() {
@@ -44,14 +43,12 @@ public class PessoaFisica extends Pessoa{
         this.dtNasc = dtNasc;
     }
 
-    public SexoEnum getSexo() {
-        return SexoEnum.valueOf(sexo);
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setSexo(SexoEnum sexo) {
-        if (sexo != null){
-            this.sexo = sexo.getCodigo();
-        }
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     @Override
