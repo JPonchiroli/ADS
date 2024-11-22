@@ -21,9 +21,8 @@ public class LocalidadeDaoJDBC implements LocalidadeDao {
         try {
             st = conn.prepareStatement(
                     "INSERT INTO localidade " +
-                            "(cep, estado, cidade, bairro, logadouro) " +
                             "VALUES " +
-                            "(?, ?, ?, ?) ");
+                            "(?, ?, ?, ?, ?) ");
 
             st.setLong(1, loc.getCEP());
             st.setString(2, loc.getEstado());
@@ -32,7 +31,7 @@ public class LocalidadeDaoJDBC implements LocalidadeDao {
             st.setString(5, loc.getLogradouro());
 
             st.executeUpdate();
-            System.out.println("Localidade criado com Sucesso");
+            System.out.println("Localidade criada com Sucesso");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
