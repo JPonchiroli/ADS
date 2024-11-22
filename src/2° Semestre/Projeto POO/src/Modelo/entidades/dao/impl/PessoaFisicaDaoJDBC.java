@@ -1,6 +1,8 @@
 package Modelo.entidades.dao.impl;
 
+import Modelo.entidades.Pessoa;
 import Modelo.entidades.PessoaFisica;
+import Modelo.entidades.Telefone;
 import Modelo.entidades.dao.PessoaFisicaDao;
 
 import java.sql.*;
@@ -40,11 +42,39 @@ public class PessoaFisicaDaoJDBC implements PessoaFisicaDao {
 
     @Override
     public PessoaFisica buscarPorCPF(Long CPF) {
-        return null;
+        PreparedStatement st = null;
+        ResultSet rs = null;
+
+        try {
+            st = conn.prepareStatement(
+                    "SELECT * " +
+                            "FROM pessoafisica " +
+                            "WHERE cpf = ? ");
+
+            st.setLong(1, CPF);
+            rs = st.executeQuery();
+            if (rs.next()){
+                PessoaFisica pf = instanciarPessoaFisica(rs);
+                return pf;
+            }
+            return null;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     @Override
     public List<PessoaFisica> buscarTodos() {
         return null;
+    }
+
+    private PessoaFisica instanciarPessoaFisica(ResultSet rs) throws SQLException {
+        PessoaFisica pf = new PessoaFisica();
+        pf.setCPF(rs.getLong("cpf"));
+        pf.setNome(rs.getString("nome"));
+        pf.setdtNasc(rs.getDate("dtNasc"));
+        pf.setSexo(rs.getString("sexo"));
+        return pf;
     }
 }

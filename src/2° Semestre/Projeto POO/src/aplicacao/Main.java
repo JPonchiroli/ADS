@@ -32,14 +32,16 @@ public class Main {
         */
         //--------------------------------------------------------------------------------------------------------------
         // Pessoa Fisica
+
         PessoaFisicaDao pessoaFisicaDao = DaoFactory.createPesosaFisicaDao();
+        /*
         Calendar calendar = Calendar.getInstance();
         calendar.set(2006, Calendar.MARCH, 27);
         Date dtNasc = calendar.getTime();
 
         PessoaFisica pessoaFisica = new PessoaFisica(10909208905l, "Joao Ponchiroli", dtNasc, "Masculino");
         pessoaFisicaDao.inserir(pessoaFisica);
-
-
+        */
+        System.out.println(pessoaFisicaDao.buscarPorCPF(10909208905l));
     }
 }
