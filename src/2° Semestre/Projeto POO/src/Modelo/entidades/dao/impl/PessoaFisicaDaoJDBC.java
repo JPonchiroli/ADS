@@ -2,11 +2,13 @@ package Modelo.entidades.dao.impl;
 
 import Modelo.entidades.Pessoa;
 import Modelo.entidades.PessoaFisica;
-import Modelo.entidades.Telefone;
 import Modelo.entidades.dao.PessoaFisicaDao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PessoaFisicaDaoJDBC implements PessoaFisicaDao {
 
@@ -66,7 +68,33 @@ public class PessoaFisicaDaoJDBC implements PessoaFisicaDao {
 
     @Override
     public List<PessoaFisica> buscarTodos() {
-        return null;
+        PreparedStatement st = null;
+        ResultSet rs = null;
+
+        try {
+            st = conn.prepareStatement(
+                    "SELECT * FROM pessoafisica");
+
+            rs = st.executeQuery();
+
+            List<PessoaFisica> list = new ArrayList<>();
+            Map<Long, PessoaFisica> map = new HashMap<>();
+
+            while (rs.next()) {
+
+                PessoaFisica pf = map.get(rs.getLong("cpf"));
+
+                if (pf == null) {
+                    pf = instanciarPessoaFisica(rs);
+                    map.put(rs.getLong("cpf"), pf);
+                }
+
+                list.add(pf);
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private PessoaFisica instanciarPessoaFisica(ResultSet rs) throws SQLException {

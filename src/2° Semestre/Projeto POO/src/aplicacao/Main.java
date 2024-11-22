@@ -41,7 +41,12 @@ public class Main {
 
         PessoaFisica pessoaFisica = new PessoaFisica(10909208905l, "Joao Ponchiroli", dtNasc, "Masculino");
         pessoaFisicaDao.inserir(pessoaFisica);
-        */
+
         System.out.println(pessoaFisicaDao.buscarPorCPF(10909208905l));
+
+        System.out.println(pessoaFisicaDao.buscarTodos());
+         */
+
+
     }
 }
