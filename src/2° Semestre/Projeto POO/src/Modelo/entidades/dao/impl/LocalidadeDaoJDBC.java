@@ -93,7 +93,7 @@ public class LocalidadeDaoJDBC implements LocalidadeDao {
         }
 
     }
-        private Localidade instanciarLocalidade(ResultSet rs) throws SQLException {
+    private Localidade instanciarLocalidade(ResultSet rs) throws SQLException {
         Localidade loc = new Localidade();
         loc.setCEP(rs.getLong("cep"));
         loc.setCidade(rs.getString("cidade"));

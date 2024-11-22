@@ -5,14 +5,13 @@ import Modelo.entidades.enums.TipoTelefoneEnum;
 public class Telefone {
     private Long id;
     private Long numeroTelefone;
-    private Integer tipoTelefone;
+    private String tipoTelefone;
 
     public Telefone(){}
 
-    public Telefone(Long id, Long numeroTelefone, TipoTelefoneEnum tipoTelefone) {
-        this.id = id;
+    public Telefone( Long numeroTelefone, String tipoTelefone) {
         this.numeroTelefone = numeroTelefone;
-        setTipoTelefone(tipoTelefone);
+        this.tipoTelefone = tipoTelefone;
     }
 
     public Long getId() {
@@ -31,13 +30,20 @@ public class Telefone {
         this.numeroTelefone = numeroTelefone;
     }
 
-    public TipoTelefoneEnum getTipoTelefone() {
-        return TipoTelefoneEnum.valueOf(tipoTelefone);
+    public String getTipoTelefone() {
+        return tipoTelefone;
     }
 
-    public void setTipoTelefone(TipoTelefoneEnum tipoTelefone) {
-        if (tipoTelefone != null) {
-            this.tipoTelefone = tipoTelefone.getCodigo();
-        }
+    public void setTipoTelefone(String tipoTelefone) {
+        this.tipoTelefone = tipoTelefone;
+    }
+
+    @Override
+    public String toString() {
+        return "Telefone{" +
+                "id=" + id +
+                ", numeroTelefone=" + numeroTelefone +
+                ", tipoTelefone='" + tipoTelefone + '\'' +
+                '}';
     }
 }

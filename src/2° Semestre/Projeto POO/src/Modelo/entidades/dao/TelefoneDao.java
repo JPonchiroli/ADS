@@ -5,6 +5,6 @@ import Modelo.entidades.Telefone;
 import java.util.List;
 
 public interface TelefoneDao {
-    void inserir();
+    void inserir(Telefone tel);
     List<Telefone> listaFones();
 }
