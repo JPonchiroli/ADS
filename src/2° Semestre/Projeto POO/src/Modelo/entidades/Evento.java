@@ -6,17 +6,17 @@ public class Evento {
 
     private String descricao;
 
-    private int tipomovimentacao;
+    private String tipoMovimentacao;
 
-    private int situacao;
+    private String situacao;
 
     public Evento(){
     }
 
-    public Evento(long id, String descricao, int tipomovimentacao, int situacao) {
+    public Evento(long id, String descricao, String tipoMovimentacao, String situacao) {
         this.id = id;
         this.descricao = descricao;
-        this.tipomovimentacao = tipomovimentacao;
+        this.tipoMovimentacao = tipoMovimentacao;
         this.situacao = situacao;
     }
 
@@ -36,19 +36,19 @@ public class Evento {
         this.descricao = descricao;
     }
 
-    public int getTipomovimentacao() {
-        return tipomovimentacao;
+    public String getTipoMovimentacao() {
+        return tipoMovimentacao;
     }
 
-    public void setTipomovimentacao(int tipomovimentacao) {
-        this.tipomovimentacao = tipomovimentacao;
+    public void setTipoMovimentacao(String tipoMovimentacao) {
+        this.tipoMovimentacao = tipoMovimentacao;
     }
 
-    public int getSituacao() {
+    public String getSituacao() {
         return situacao;
     }
 
-    public void setSituacao(int situacao) {
+    public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
 
@@ -57,7 +57,7 @@ public class Evento {
         return "evento{" +
                 "id=" + id +
                 ", descricao='" + descricao + '\'' +
-                ", tipomovimentacao=" + tipomovimentacao +
+                ", tipoMovimentacao=" + tipoMovimentacao +
                 ", situacao=" + situacao +
                 '}';
     }

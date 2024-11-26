@@ -14,5 +14,7 @@ public class DaoFactory {
 
     public static PessoaJuridicaDao createPessoaJuridicaDao() { return new PessoaJuridicaDaoJDBC(DB.getConnection()); }
 
-    public static BancoDao createBancoDaoDao() { return new BancoDaoJDBC(DB.getConnection()); }
+    public static BancoDao createBancoDao() { return new BancoDaoJDBC(DB.getConnection()); }
+
+    public static EventoDao createEventoDao() { return new EventoDaoJDBC(DB.getConnection()); }
 }

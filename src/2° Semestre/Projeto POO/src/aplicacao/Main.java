@@ -53,8 +53,9 @@ public class Main {
 
         System.out.println(pessoaJuridicaDao.buscarTodos());
         */
+        //--------------------------------------------------------------------------------------------------------------
         // Banco
-
+        /*
         BancoDao bancoDao = DaoFactory.createBancoDaoDao();
 
         Banco banco = new Banco(123l, "banco do brasil", "XXX-XX", "XXXXX-XXX");
@@ -64,7 +65,20 @@ public class Main {
         System.out.println(bancoDao.buscarPorCodigo(123l));
 
         System.out.println(bancoDao.buscarTodos());
+        */
+        //--------------------------------------------------------------------------------------------------------------
+        // Evento
+        /*
+        EventoDao eventoDao = DaoFactory.createEventoDao();
+
+        Evento evento = new Evento(123l, "Evento X", "XXX-XX", "Ativo");
+        eventoDao.inserir(evento);
 
 
+        System.out.println(eventoDao.buscarPorId(123l));
+
+        System.out.println(eventoDao.buscarTodos());
+        */
+        //--------------------------------------------------------------------------------------------------------------
     }
 }
