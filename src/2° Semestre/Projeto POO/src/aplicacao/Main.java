@@ -80,5 +80,16 @@ public class Main {
         System.out.println(eventoDao.buscarTodos());
         */
         //--------------------------------------------------------------------------------------------------------------
+        // Cotacoes
+        /*
+        CotacoesDao cotacoesDao = DaoFactory.createCotacoesDao();
+
+        Cotacoes cotacao = new Cotacoes(123l, new Date(), 500);
+        cotacoesDao.inserir(cotacao);
+
+        System.out.println(cotacoesDao.buscarPorCodido(123l));
+
+        System.out.println(cotacoesDao.buscarTodos());
+        */
     }
 }

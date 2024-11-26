@@ -14,6 +14,12 @@ public class Cotacoes {
     public Cotacoes(){
     }
 
+    public Cotacoes(Long codigo, Date data, double valor) {
+        this.codigo = codigo;
+        this.data = data;
+        this.valor = valor;
+    }
+
     public Long getCodigo() {
         return codigo;
     }

@@ -17,4 +17,6 @@ public class DaoFactory {
     public static BancoDao createBancoDao() { return new BancoDaoJDBC(DB.getConnection()); }
 
     public static EventoDao createEventoDao() { return new EventoDaoJDBC(DB.getConnection()); }
+
+    public static CotacoesDao createCotacoesDao() { return new CotacoesDaoJDBC(DB.getConnection()); }
 }
