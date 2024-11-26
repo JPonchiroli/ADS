@@ -6,13 +6,19 @@ public class Banco {
 
     private String nome;
 
-    private String mascaraagencia;
+    private String mascaraAgencia;
 
-    private String mascaraconta;
+    private String mascaraConta;
 
     public Banco(){
     }
 
+    public Banco(long codigo, String nome, String mascaraAgencia, String mascaraConta) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.mascaraAgencia = mascaraAgencia;
+        this.mascaraConta = mascaraConta;
+    }
 
     public long getCodigo() {
         return codigo;
@@ -30,20 +36,20 @@ public class Banco {
         this.nome = nome;
     }
 
-    public String getMascaraagencia() {
-        return mascaraagencia;
+    public String getmascaraAgencia() {
+        return mascaraAgencia;
     }
 
-    public void setMascaraagencia(String mascaraagencia) {
-        this.mascaraagencia = mascaraagencia;
+    public void setmascaraAgencia(String mascaraAgencia) {
+        this.mascaraAgencia = mascaraAgencia;
     }
 
-    public String getMascaraconta() {
-        return mascaraconta;
+    public String getmascaraConta() {
+        return mascaraConta;
     }
 
-    public void setMascaraconta(String mascaraconta) {
-        this.mascaraconta = mascaraconta;
+    public void setmascaraConta(String mascaraConta) {
+        this.mascaraConta = mascaraConta;
     }
 
     @Override
@@ -51,8 +57,8 @@ public class Banco {
         return "Banco{" +
                 "codigo=" + codigo +
                 ", nome='" + nome + '\'' +
-                ", mascaraagencia='" + mascaraagencia + '\'' +
-                ", mascaraconta='" + mascaraconta + '\'' +
+                ", mascaraAgencia='" + mascaraAgencia + '\'' +
+                ", mascaraConta='" + mascaraConta + '\'' +
                 '}';
     }
 }

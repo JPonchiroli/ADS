@@ -1,8 +1,6 @@
 package Modelo.entidades.dao;
 
-import Modelo.entidades.dao.impl.LocalidadeDaoJDBC;
-import Modelo.entidades.dao.impl.PessoaFisicaDaoJDBC;
-import Modelo.entidades.dao.impl.TelefoneDaoJDBC;
+import Modelo.entidades.dao.impl.*;
 import db.DB;
 
 public class DaoFactory {
@@ -14,5 +12,7 @@ public class DaoFactory {
 
     public static PessoaFisicaDaoJDBC createPesosaFisicaDao(){ return new PessoaFisicaDaoJDBC(DB.getConnection()); }
 
+    public static PessoaJuridicaDao createPessoaJuridicaDao() { return new PessoaJuridicaDaoJDBC(DB.getConnection()); }
 
+    public static BancoDao createBancoDaoDao() { return new BancoDaoJDBC(DB.getConnection()); }
 }

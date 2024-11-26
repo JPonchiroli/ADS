@@ -1,25 +1,25 @@
 package Modelo.entidades;
 
 public class PessoaJuridica extends Pessoa {
-    private Long CNPJ;
+    private String CNPJ;
     private String razaoSocial;
-    private String nomeFantasma;
+    private String nomeFantasia;
     private String inscrEstadual;
 
     public PessoaJuridica(){}
 
-    public PessoaJuridica(Long CNPJ, String razaoSocial, String nomeFantasma, String inscrEstadual) {
+    public PessoaJuridica(String CNPJ, String razaoSocial, String nomeFantasia, String inscrEstadual) {
         this.CNPJ = CNPJ;
         this.razaoSocial = razaoSocial;
-        this.nomeFantasma = nomeFantasma;
+        this.nomeFantasia = nomeFantasia;
         this.inscrEstadual = inscrEstadual;
     }
 
-    public Long getCNPJ() {
+    public String getCNPJ() {
         return CNPJ;
     }
 
-    public void setCNPJ(Long CNPJ) {
+    public void setCNPJ(String CNPJ) {
         this.CNPJ = CNPJ;
     }
 
@@ -31,12 +31,12 @@ public class PessoaJuridica extends Pessoa {
         this.razaoSocial = razaoSocial;
     }
 
-    public String getNomeFantasma() {
-        return nomeFantasma;
+    public String getnomeFantasia() {
+        return nomeFantasia;
     }
 
-    public void setNomeFantasma(String nomeFantasma) {
-        this.nomeFantasma = nomeFantasma;
+    public void setnomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
     public String getInscrEstadual() {
@@ -52,7 +52,7 @@ public class PessoaJuridica extends Pessoa {
         return "PessoaJuridica [" +
                 "CNPJ: " + CNPJ +
                 ", razaoSocial: " + razaoSocial +
-                ", nomeFantasma: " + nomeFantasma +
+                ", nomeFantasia: " + nomeFantasia +
                 ", inscrEstadual: " + inscrEstadual +
                 ']';
     }
