@@ -3,6 +3,7 @@ package Modelo.entidades.dao.impl;
 import Modelo.entidades.Banco;
 import Modelo.entidades.ContaPoupanca;
 import Modelo.entidades.IndiceRemuneracao;
+import Modelo.entidades.dao.ContaPoupancaDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContaPoupancaDaoJDBC implements ContaPoupancaDao{
+public class ContaPoupancaDaoJDBC implements ContaPoupancaDao {
 
     private Connection conn;
 
@@ -26,19 +27,18 @@ public class ContaPoupancaDaoJDBC implements ContaPoupancaDao{
         try {
             st = conn.prepareStatement(
                     "INSERT INTO conta_poupanca " +
-                            "(codigo_banco, agencia, numero, saldo, data_abertura, titular, indice_remuneracao_id, dia_aniversario, perc_rendimento_real) " +
-                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                            "(codigo_banco, agencia, numero, saldo, data_abertura, titular, indice_remuneracao_id, aniversario, perc_rendimento_real) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
-            st.setLong(1, cp.getId());
-            st.setLong(2, cp.getBanco().getCodigo());
-            st.setInt(3, cp.getAgencia());
-            st.setLong(4, cp.getNumero());
-            st.setDouble(5, cp.getSaldo());
-            st.setDate(6, new java.sql.Date(cp.getdataAbertura().getTime()));
-            st.setString(7, cp.getTitular());
-            st.setLong(8, cp.getIndiceRemuneracao().getCodigo());
-            st.setInt(9, cp.getdiaAniversario());
-            st.setDouble(10, cp.getpercRendimentoReal());
+            st.setLong(1, cp.getBanco().getCodigo());
+            st.setInt(2, cp.getAgencia());
+            st.setLong(3, cp.getNumero());
+            st.setDouble(4, cp.getSaldo());
+            st.setDate(5, new java.sql.Date(cp.getdataAbertura().getTime()));
+            st.setString(6, cp.getTitular());
+            st.setLong(7, cp.getIndiceRemuneracao().getCodigo());
+            st.setDate(8, new java.sql.Date(cp.getdiaAniversario().getTime()));
+            st.setDouble(9, cp.getpercRendimentoReal());
 
             st.executeUpdate();
 
@@ -55,7 +55,7 @@ public class ContaPoupancaDaoJDBC implements ContaPoupancaDao{
 
         try {
             st = conn.prepareStatement(
-                    "SELECT *" +
+                    "SELECT * " +
                             "FROM conta_poupanca " +
                             "WHERE id = ?");
 
@@ -99,7 +99,6 @@ public class ContaPoupancaDaoJDBC implements ContaPoupancaDao{
 
         Banco banco = new Banco();
         banco.setCodigo(rs.getLong("codigo_banco"));
-        banco.setNome(rs.getString("banco_nome"));
         cp.setBanco(banco);
 
         cp.setAgencia(rs.getInt("agencia"));
@@ -109,11 +108,10 @@ public class ContaPoupancaDaoJDBC implements ContaPoupancaDao{
         cp.setTitular(rs.getString("titular"));
 
         IndiceRemuneracao ir = new IndiceRemuneracao();
-        ir.setCodigo(rs.getLong("indice_codigo"));
-        ir.setDescricao(rs.getString("indice_descricao"));
+        ir.setCodigo(rs.getLong("indice_remuneracao_id"));
         cp.setIndiceRemuneracao(ir);
 
-        cp.setdiaAniversario(rs.getInt("dia_aniversario"));
+        cp.setdiaAniversario(rs.getDate("aniversario"));
         cp.setpercRendimentoReal(rs.getDouble("perc_rendimento_real"));
 
         return cp;

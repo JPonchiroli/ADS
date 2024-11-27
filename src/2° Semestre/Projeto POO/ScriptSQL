@@ -78,3 +78,19 @@ CREATE TABLE indiceRemuneracao(
     periodicidade VARCHAR(100),
     situacao VARCHAR(100)
 );
+
+
+select * from conta_poupanca;
+drop table conta_poupanca;
+CREATE TABLE conta_poupanca (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    codigo_banco INT NOT NULL,
+    agencia INT NOT NULL,
+    numero INT NOT NULL,
+    saldo DOUBLE NOT NULL,
+    data_abertura DATE NOT NULL,
+    titular VARCHAR(255) NOT NULL,
+    indice_remuneracao_id BIGINT NOT NULL,
+    aniversario DATE NOT NULL,
+    perc_rendimento_real DOUBLE NOT NULL
+);

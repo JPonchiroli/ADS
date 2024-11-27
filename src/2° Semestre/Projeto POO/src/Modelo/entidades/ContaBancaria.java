@@ -14,8 +14,20 @@ public  abstract class ContaBancaria {
     private Date dataAbertura;
 
     private String titular;
-    
-    
+
+    public ContaBancaria(){}
+
+
+    public ContaBancaria(Banco banco, int agencia, long numero, double saldo, Date dataAbertura, String titular) {
+        this.id = id;
+        this.banco = banco;
+        this.agencia = agencia;
+        this.numero = numero;
+        this.saldo = saldo;
+        this.dataAbertura = dataAbertura;
+        this.titular = titular;
+    }
+
 
     public long getId() {
         return id;

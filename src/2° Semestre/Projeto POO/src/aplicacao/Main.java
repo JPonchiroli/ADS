@@ -103,5 +103,24 @@ public class Main {
 
         System.out.println(indiceRemuneracaoDao.buscarTodos());
         */
+        //--------------------------------------------------------------------------------------------------------------
+        // Conta Poupanca
+        /*
+        ContaPoupancaDao contaPoupancaDao = DaoFactory.createContaPoupanca();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2006, Calendar.MARCH, 27);
+        Date dtNasc = calendar.getTime();
+
+        Banco banco = new Banco(123l, "banco do brasil", "XXX-XX", "XXXXX-XXX");
+        IndiceRemuneracao indiceRemuneracao = new IndiceRemuneracao(123l, "Remuneracao estavel", "5 em 5 meses", "Ativo");
+
+        ContaPoupanca contaPoupanca = new ContaPoupanca(banco, 111-11, 1111-111, 1500, new Date(), "Joao", indiceRemuneracao, dtNasc, 55.5);
+        contaPoupancaDao.inserir(contaPoupanca);
+
+        System.out.println(contaPoupancaDao.buscaPorId(1l));
+
+        System.out.println(contaPoupancaDao.buscarTodos());
+        */
     }
 }

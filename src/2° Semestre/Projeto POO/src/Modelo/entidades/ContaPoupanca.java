@@ -1,10 +1,12 @@
 package Modelo.entidades;
 
+import java.util.Date;
+
 public class ContaPoupanca extends ContaBancaria{
 
     private IndiceRemuneracao indiceRemuneracao;
 
-    private int diaAniversario;
+    private Date diaAniversario;
 
     private double percRendimentoReal;
 
@@ -12,8 +14,10 @@ public class ContaPoupanca extends ContaBancaria{
         super();
     }
 
-    public ContaPoupanca(IndiceRemuneracao indiceRemuneracao, int diaAniversario, double percRendimentoReal) {
-        super();
+
+    public ContaPoupanca(Banco banco, int agencia, long numero, double saldo, Date dataAbertura,
+                         String titular, IndiceRemuneracao indiceRemuneracao, Date diaAniversario, double percRendimentoReal) {
+        super(banco, agencia, numero, saldo, dataAbertura, titular);
         this.indiceRemuneracao = indiceRemuneracao;
         this.diaAniversario = diaAniversario;
         this.percRendimentoReal = percRendimentoReal;
@@ -27,11 +31,11 @@ public class ContaPoupanca extends ContaBancaria{
         this.indiceRemuneracao = indiceRemuneracao;
     }
 
-    public int getdiaAniversario() {
+    public Date getdiaAniversario() {
         return diaAniversario;
     }
 
-    public void setdiaAniversario(int diaAniversario) {
+    public void setdiaAniversario(Date diaAniversario) {
         this.diaAniversario = diaAniversario;
     }
 

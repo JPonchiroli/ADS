@@ -1,4 +1,4 @@
-package Modelo.entidades.dao.impl;
+package Modelo.entidades.dao;
 
 import Modelo.entidades.ContaPoupanca;
 
