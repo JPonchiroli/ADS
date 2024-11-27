@@ -11,9 +11,11 @@ public  abstract class ContaBancaria {
 
     private double saldo;
 
-    private Date dataabertura;
+    private Date dataAbertura;
 
     private String titular;
+    
+    
 
     public long getId() {
         return id;
@@ -55,12 +57,12 @@ public  abstract class ContaBancaria {
         this.saldo = saldo;
     }
 
-    public Date getDataabertura() {
-        return dataabertura;
+    public Date getdataAbertura() {
+        return dataAbertura;
     }
 
-    public void setDataabertura(Date dataabertura) {
-        this.dataabertura = dataabertura;
+    public void setdataAbertura(Date dataAbertura) {
+        this.dataAbertura = dataAbertura;
     }
 
     public String getTitular() {
@@ -79,7 +81,7 @@ public  abstract class ContaBancaria {
                 ", agencia=" + agencia +
                 ", numero=" + numero +
                 ", saldo=" + saldo +
-                ", dataabertura=" + dataabertura +
+                ", dataAbertura=" + dataAbertura +
                 ", titular='" + titular + '\'' +
                 '}';
     }

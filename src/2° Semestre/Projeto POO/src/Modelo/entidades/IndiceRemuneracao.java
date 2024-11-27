@@ -6,11 +6,19 @@ public class IndiceRemuneracao {
 
     private String descricao;
 
-    private int periodicidade;
+    private String periodicidade;
 
-    private int situacao;
+    private String situacao;
 
+    public IndiceRemuneracao() {
+    }
 
+    public IndiceRemuneracao(long codigo, String descricao, String periodicidade, String situacao) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.periodicidade = periodicidade;
+        this.situacao = situacao;
+    }
 
     public long getCodigo() {
         return codigo;
@@ -28,19 +36,19 @@ public class IndiceRemuneracao {
         this.descricao = descricao;
     }
 
-    public int getPeriodicidade() {
+    public String getPeriodicidade() {
         return periodicidade;
     }
 
-    public void setPeriodicidade(int periodicidade) {
+    public void setPeriodicidade(String periodicidade) {
         this.periodicidade = periodicidade;
     }
 
-    public int getSituacao() {
+    public String getSituacao() {
         return situacao;
     }
 
-    public void setSituacao(int situacao) {
+    public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
 

@@ -19,4 +19,7 @@ public class DaoFactory {
     public static EventoDao createEventoDao() { return new EventoDaoJDBC(DB.getConnection()); }
 
     public static CotacoesDao createCotacoesDao() { return new CotacoesDaoJDBC(DB.getConnection()); }
+
+    public static IndiceRemuneracaoDao createIndiceRemuneracao() { return new IndiceRemuneracaoDaoJDBC(DB.getConnection()) {
+    }; }
 }

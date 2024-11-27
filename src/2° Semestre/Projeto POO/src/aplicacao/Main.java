@@ -91,5 +91,17 @@ public class Main {
 
         System.out.println(cotacoesDao.buscarTodos());
         */
+        //--------------------------------------------------------------------------------------------------------------
+        // Indice Remuneracao
+        /*
+        IndiceRemuneracaoDao indiceRemuneracaoDao = DaoFactory.createIndiceRemuneracao();
+
+        IndiceRemuneracao indiceRemuneracao = new IndiceRemuneracao(123l, "Remuneracao estavel", "5 em 5 meses", "Ativo");
+        indiceRemuneracaoDao.inserir(indiceRemuneracao);
+
+        System.out.println(indiceRemuneracaoDao.buscaPorCodigo(123l));
+
+        System.out.println(indiceRemuneracaoDao.buscarTodos());
+        */
     }
 }
