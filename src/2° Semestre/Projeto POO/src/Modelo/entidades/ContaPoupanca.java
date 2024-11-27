@@ -4,10 +4,20 @@ public class ContaPoupanca extends ContaBancaria{
 
     private IndiceRemuneracao indiceRemuneracao;
 
-    private int diaaniversario;
+    private int diaAniversario;
 
-    private double percrendimentoreal;
+    private double percRendimentoReal;
 
+    public ContaPoupanca(){
+        super();
+    }
+
+    public ContaPoupanca(IndiceRemuneracao indiceRemuneracao, int diaAniversario, double percRendimentoReal) {
+        super();
+        this.indiceRemuneracao = indiceRemuneracao;
+        this.diaAniversario = diaAniversario;
+        this.percRendimentoReal = percRendimentoReal;
+    }
 
     public IndiceRemuneracao getIndiceRemuneracao() {
         return indiceRemuneracao;
@@ -17,28 +27,28 @@ public class ContaPoupanca extends ContaBancaria{
         this.indiceRemuneracao = indiceRemuneracao;
     }
 
-    public int getDiaaniversario() {
-        return diaaniversario;
+    public int getdiaAniversario() {
+        return diaAniversario;
     }
 
-    public void setDiaaniversario(int diaaniversario) {
-        this.diaaniversario = diaaniversario;
+    public void setdiaAniversario(int diaAniversario) {
+        this.diaAniversario = diaAniversario;
     }
 
-    public double getPercrendimentoreal() {
-        return percrendimentoreal;
+    public double getpercRendimentoReal() {
+        return percRendimentoReal;
     }
 
-    public void setPercrendimentoreal(double percrendimentoreal) {
-        this.percrendimentoreal = percrendimentoreal;
+    public void setpercRendimentoReal(double percRendimentoReal) {
+        this.percRendimentoReal = percRendimentoReal;
     }
 
     @Override
     public String toString() {
         return "contapoupanca{" +
                 "cpindiceremuneracao=" + indiceRemuneracao +
-                ", diaaniversario=" + diaaniversario +
-                ", percrendimentoreal=" + percrendimentoreal +
+                ", diaAniversario=" + diaAniversario +
+                ", percRendimentoReal=" + percRendimentoReal +
                 '}';
     }
 }

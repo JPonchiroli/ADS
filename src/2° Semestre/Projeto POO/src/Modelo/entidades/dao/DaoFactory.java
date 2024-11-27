@@ -20,6 +20,8 @@ public class DaoFactory {
 
     public static CotacoesDao createCotacoesDao() { return new CotacoesDaoJDBC(DB.getConnection()); }
 
-    public static IndiceRemuneracaoDao createIndiceRemuneracao() { return new IndiceRemuneracaoDaoJDBC(DB.getConnection()) {
-    }; }
+    public static IndiceRemuneracaoDao createIndiceRemuneracao() { return new IndiceRemuneracaoDaoJDBC(DB.getConnection()); }
+
+    public static ContaPoupancaDao createContaPoupanca() { return new ContaPoupancaDaoJDBC(DB.getConnection()); }
+
 }
