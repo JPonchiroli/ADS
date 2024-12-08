@@ -34,7 +34,7 @@ public class ContaPoupancaDaoJDBC implements ContaPoupancaDao {
             st.setInt(2, cp.getAgencia());
             st.setLong(3, cp.getNumero());
             st.setDouble(4, cp.getSaldo());
-            st.setDate(5, new java.sql.Date(cp.getdataAbertura().getTime()));
+            st.setDate(5, new java.sql.Date(cp.getDataAbertura().getTime()));
             st.setString(6, cp.getTitular());
             st.setLong(7, cp.getIndiceRemuneracao().getCodigo());
             st.setDate(8, new java.sql.Date(cp.getdiaAniversario().getTime()));

@@ -94,3 +94,38 @@ CREATE TABLE conta_poupanca (
     aniversario DATE NOT NULL,
     perc_rendimento_real DOUBLE NOT NULL
 );
+
+select * from conta_corrente;
+drop table conta_corrente;
+CREATE TABLE conta_corrente (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    codigo_banco INT NOT NULL,
+    agencia INT NOT NULL,
+    numero INT NOT NULL,
+    saldo DOUBLE NOT NULL,
+    data_abertura DATE NOT NULL,
+    titular VARCHAR(255) NOT NULL,
+    valoresCestaServicos DECIMAL(9,2) NOT NULL,
+    limitePixNoturno DECIMAL(9,2) NOT NULL
+);
+
+select * from conta_salario;
+drop table conta_salario;
+CREATE TABLE conta_salario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cnpj_vinculado VARCHAR(20) NOT NULL,
+    limite_consignado DECIMAL(9, 2) NOT NULL,
+    limite_antecipacao_mes DECIMAL(9, 2) NOT NULL,
+    permite_antecipar_13o BOOLEAN NOT NULL,
+    conta_vinculada INT,
+    FOREIGN KEY (conta_vinculada) REFERENCES conta_corrente(id)
+);
+
+select * from conta_salario;
+drop table conta_salario;
+CREATE TABLE conta_especial (
+    id INT PRIMARY KEY,
+    limite_credito DECIMAL(9, 2) NOT NULL,
+    data_vcto_contrato DATE NOT NULL,
+    FOREIGN KEY (id) REFERENCES conta_corrente(id)
+);

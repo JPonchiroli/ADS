@@ -1,5 +1,6 @@
 package Modelo.entidades.dao;
 
+import Modelo.entidades.ContaEspecial;
 import Modelo.entidades.dao.impl.*;
 import db.DB;
 
@@ -24,4 +25,9 @@ public class DaoFactory {
 
     public static ContaPoupancaDao createContaPoupanca() { return new ContaPoupancaDaoJDBC(DB.getConnection()); }
 
+    public static ContaCorrenteDao createContaCorrente() { return new ContaCorrenteDaoJDBC(DB.getConnection()); }
+
+    public static ContaSalarioDao createContaSalario() { return new ContaSalarioDaoJDBC(DB.getConnection()); }
+
+    public static ContaEspecialDao createContaEspecial() { return new ContaEspecialDaoJDBC(DB.getConnection()); }
 }

@@ -1,65 +1,78 @@
 package Modelo.entidades;
 
+import java.util.Date;
+
 public class ContaSalario extends ContaBancaria{
 
-    private String cnpjvinculado;
+    private String cnpjVinculado;
 
-    private double limiteconsignado;
+    private double limiteConsignado;
 
-    private double limiteantecipacaomes;
+    private double limiteAntecipacaoMes;
 
-    private boolean permiteantecipar13o;
+    private boolean permiteAntecipar13o;
 
-    private long ContaVinculada;
+    private Long contaVinculada;
 
-    public String getCnpjvinculado() {
-        return cnpjvinculado;
+    public ContaSalario(){}
+
+    public ContaSalario(Banco banco, int agencia, long numero, double saldo, Date dataAbertura, String titular, String cnpjVinculado, double limiteConsignado, double limiteAntecipacaoMes, boolean permiteAntecipar13o, Long contaVinculada) {
+        super(banco, agencia, numero, saldo, dataAbertura, titular);
+        this.cnpjVinculado = cnpjVinculado;
+        this.limiteConsignado = limiteConsignado;
+        this.limiteAntecipacaoMes = limiteAntecipacaoMes;
+        this.permiteAntecipar13o = permiteAntecipar13o;
+        this.contaVinculada = contaVinculada;
     }
 
-    public void setCnpjvinculado(String cnpjvinculado) {
-        this.cnpjvinculado = cnpjvinculado;
+    public String getCnpjVinculado() {
+        return cnpjVinculado;
     }
 
-    public double getLimiteconsignado() {
-        return limiteconsignado;
+    public void setCnpjvinculado(String cnpjVinculado) {
+        this.cnpjVinculado = cnpjVinculado;
     }
 
-    public void setLimiteconsignado(double limiteconsignado) {
-        this.limiteconsignado = limiteconsignado;
+    public double getLimiteConsignado() {
+        return limiteConsignado;
     }
 
-    public double getLimiteantecipacaomes() {
-        return limiteantecipacaomes;
+    public void setLimiteconsignado(double limiteConsignado) {
+        this.limiteConsignado = limiteConsignado;
     }
 
-    public void setLimiteantecipacaomes(double limiteantecipacaomes) {
-        this.limiteantecipacaomes = limiteantecipacaomes;
+    public double getLimiteAntecipacaoMes() {
+        return limiteAntecipacaoMes;
     }
 
-    public boolean isPermiteantecipar13o() {
-        return permiteantecipar13o;
+    public void setLimiteantecipacaomes(double limiteAntecipacaoMes) {
+        this.limiteAntecipacaoMes = limiteAntecipacaoMes;
     }
 
-    public void setPermiteantecipar13o(boolean permiteantecipar13o) {
-        this.permiteantecipar13o = permiteantecipar13o;
+    public boolean isPermiteAntecipar13o() {
+        return permiteAntecipar13o;
     }
 
-    public long getContaVinculada() {
-        return ContaVinculada;
+    public void setPermiteantecipar13o(boolean permiteAntecipar13o) {
+        this.permiteAntecipar13o = permiteAntecipar13o;
     }
 
-    public void setContaVinculada(long contaVinculada) {
-        ContaVinculada = contaVinculada;
+    public Long getContaVinculada() {
+        return contaVinculada;
+    }
+
+    public void setContaVinculada(Long contaVinculada) {
+        contaVinculada = contaVinculada;
     }
 
     @Override
     public String toString() {
         return "contasalario{" +
-                "cnpjvinculado='" + cnpjvinculado + '\'' +
-                ", limiteconsignado=" + limiteconsignado +
-                ", limiteantecipacaomes=" + limiteantecipacaomes +
-                ", permiteantecipar13o=" + permiteantecipar13o +
-                ", ContaVinculada=" + ContaVinculada +
+                "cnpjVinculado='" + cnpjVinculado + '\'' +
+                ", limiteConsignado=" + limiteConsignado +
+                ", limiteAntecipacaoMes=" + limiteAntecipacaoMes +
+                ", permiteAntecipar13o=" + permiteAntecipar13o +
+                ", ContaVinculada=" + contaVinculada +
                 '}';
     }
 }

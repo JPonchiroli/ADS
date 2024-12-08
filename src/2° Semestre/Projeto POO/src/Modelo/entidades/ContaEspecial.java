@@ -3,39 +3,38 @@ package Modelo.entidades;
 import java.util.Date;
 
 public class ContaEspecial extends ContaCorrente{
-    private double limitecredito;
-    private Date datavctocontrato;
+    private double limiteCredito;
+    private Date dataVctoContrato;
 
     public ContaEspecial() {
     }
 
-    public ContaEspecial(double limitecredito, Date datavctocontrato) {
-        this.limitecredito = limitecredito;
-        this.datavctocontrato = datavctocontrato;
+    public ContaEspecial(double limiteCredito, Date dataVctoContrato) {
+        this.limiteCredito = limiteCredito;
+        this.dataVctoContrato = dataVctoContrato;
     }
 
-
-    public double getLimitecredito() {
-        return limitecredito;
+    public double getLimiteCredito() {
+        return limiteCredito;
     }
 
-    public void setLimitecredito(double limitecredito) {
-        this.limitecredito = limitecredito;
+    public void setLimiteCredito(double limiteCredito) {
+        this.limiteCredito = limiteCredito;
     }
 
-    public Date getDatavctocontrato() {
-        return datavctocontrato;
+    public Date getDataVctoContrato() {
+        return dataVctoContrato;
     }
 
-    public void setDatavctocontrato(Date datavctocontrato) {
-        this.datavctocontrato = datavctocontrato;
+    public void setDataVctoContrato(Date dataVctoContrato) {
+        this.dataVctoContrato = dataVctoContrato;
     }
 
     @Override
     public String toString() {
         return "contaespecial{" +
-                "limitecredito=" + limitecredito +
-                ", datavctocontrato=" + datavctocontrato +
+                "limiteCredito=" + limiteCredito +
+                ", dataVctoContrato=" + dataVctoContrato +
                 '}';
     }
 }

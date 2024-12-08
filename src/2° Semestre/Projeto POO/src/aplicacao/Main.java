@@ -2,10 +2,7 @@ package aplicacao;
 
 import Modelo.entidades.*;
 import Modelo.entidades.dao.*;
-import Modelo.entidades.dao.impl.LocalidadeDaoJDBC;
-import db.DB;
 
-import java.sql.Connection;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -121,6 +118,57 @@ public class Main {
         System.out.println(contaPoupancaDao.buscaPorId(1l));
 
         System.out.println(contaPoupancaDao.buscarTodos());
+        */
+        //--------------------------------------------------------------------------------------------------------------
+        // Conta Corrente
+        /*
+        ContaCorrenteDao contaCorrenteDao = DaoFactory.createContaCorrente();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2006, Calendar.MARCH, 27);
+        Date dtNasc = calendar.getTime();
+
+        Banco banco = new Banco(123l, "banco do brasil", "XXX-XX", "XXXXX-XXX");
+
+        ContaCorrente contaCorrente = new ContaCorrente(banco, 111-11, 1111-111, 1500, new Date(), "Joao", 500, 15000);
+        contaCorrenteDao.inserir(contaCorrente);
+
+        System.out.println(contaCorrenteDao.buscarPorId(1));
+
+        System.out.println(contaCorrenteDao.buscarTodos());
+        */
+        //--------------------------------------------------------------------------------------------------------------
+        // Conta Salario
+        /*
+        ContaSalarioDao contaSalarioDao = DaoFactory.createContaSalario();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2006, Calendar.MARCH, 27);
+        Date dtNasc = calendar.getTime();
+
+        Banco banco = new Banco(123l, "banco do brasil", "XXX-XX", "XXXXX-XXX");
+        ContaCorrente contaCorrente = new ContaCorrente(banco, 111-11, 1111-111, 1500, new Date(), "Joao", 500, 15000);
+
+        ContaSalario contaSalario = new ContaSalario
+                (banco, contaCorrente.getAgencia(), contaCorrente.getNumero(), contaCorrente.getSaldo(), contaCorrente.getDataAbertura(), contaCorrente.getTitular(),
+                "12354", 15000, 5000, true, 1L);
+        contaSalarioDao.inserir(contaSalario);
+
+        System.out.println(contaSalarioDao.buscaPorId(1));
+
+        System.out.println(contaSalarioDao.buscarTodos());
+        */
+        //--------------------------------------------------------------------------------------------------------------
+        // Conta Especial
+        /*
+        ContaEspecialDao contaEspecialDao = DaoFactory.createContaEspecial();
+
+        ContaEspecial contaEspecial = new ContaEspecial(50000, new Date());
+        contaEspecialDao.inserir(contaEspecial);
+
+        System.out.println(contaEspecialDao.buscaPorId(1));
+
+        System.out.println(contaEspecialDao.buscarTodos());
         */
     }
 }

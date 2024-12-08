@@ -69,7 +69,7 @@ public  abstract class ContaBancaria {
         this.saldo = saldo;
     }
 
-    public Date getdataAbertura() {
+    public Date getDataAbertura() {
         return dataAbertura;
     }
 
