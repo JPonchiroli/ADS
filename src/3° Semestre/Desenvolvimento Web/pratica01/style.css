@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    border: 1px solid #000;
+    border-top: none;
+    padding: 10px 100px 10px 100px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.container-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.perfil-image {
+    height: 10%;
+    width: 10%;
+    border-radius: 50%;
+}
+
+.container-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.title-sobreMim{
+    margin-bottom: 10px;
+}
+
+.container-tecnologias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 10px;
+}
+
+li {
+    margin: 10px;
+}
+
+.container-formacoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
