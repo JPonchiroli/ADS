@@ -3,97 +3,97 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Sobre Você</title>
+
+        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
         
-        <div id="cabecalho">
-            <h1>Sobre Voce</h1>
-            <p id="tagline">Me conte um pouco mais sobre você</p>
-        </div>
+        <header>
+            <h1>João Pedro Ferreira Ponchiroli</h1>
 
-        <main id="countedo">
-            <form action="sobreVoce.html" method="post">
+            <nav>
+                <a href="index.html">Sobre Mim</a>
 
-                <label for="nome-completo">Nome Completo</label>
-                <input type="text" name="nome-completo" id="nome-completo" required="true" autofocus >
-                <br>
+                <a href="sobreVoce.html">Sobre Você</a>
+            </nav>
+        </header>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" pattern="[A-Za-z]">
-                <br>
-                
-                <label for="dataNasc">Data Nascimento</label>
-                <input type="date" name="dataNasc" id="dataNasc">
-                <br>
+        <main>
 
-                <label for="numIrmaos">Número de Irmãos</label>
-                <input type="number" name="numIrmaos" id="numIrmaos"> 
-                <br>
-
-                <label for="favColor">Cor Favorita</label>
-                <input type="color" name="favColor" id="favColor"> 
-                <br>
-
-                <label for="genero-favorito">Gênero Musical Favorito</label>
-                <select name="genero-favorito" id="genero-favorito">
-                    <option value="sertanejo">Sertanjeo</option>
-                    <option value="funk">Funk</option>
-                    <option value="mpb">Rap</option>
-                    <option value="pagode">Pagode</option>
-                </select>
-                <br>
-
-                <label for="">Possui Pets?</label>
-                <br>
-
-                <label for="newsletter-sim">Sim</label>
-                <input type="radio" name="newsletter" id="newsletter-sim" value="sim">
-                <label for="newsletter-nao">Não</label>
-                <input type="radio" name="newsletter" id="newsletter-nao" value="nao">
-                <br>
-
-                <label for="">Se sim, quais?</label>
-                <br>
-
-                <input type="checkbox" name="cachorro" id="cachorro">
-                <label for="cachorro">Cachorro</label>
-
-                <input type="checkbox" name="gato" id="gato">
-                <label for="gato">Gato</label>
-                
-                <input type="checkbox" name="passaro" id="passaro">
-                <label for="passaro">Pássaro</label>
-                
-                <input type="checkbox" name="tartaruga" id="tartaruga">
-                <label for="tartaruga">Tartaruga</label>
-                <br>
-
-                <label for="dias-exercicios">Dias em que faz exercícios</label>
-                <input type="range" name="dias-exercicios" id="dias-exercicios" min="0" max="7"> 
-                <br>
-                
-                <label for="dias-exercicios">Quando suas aulas da faculdade começaram</label>
-                <input type="month" name="dias-exercicios" id="dias-exercicios" min="0" max="7"> 
-                <br>
-
-                <label for="story">Conte uma curiosidade sobre você:</label>
-                <br>    
-                <textarea id="story" name="story" cols="40"></textarea>
-                <br>
-
-                <input type="submit" value="Cadastrar">
-
-            </form>
-
+            <section>
             
-            <div class="container-links">
-                <a href="index.html">Sobre mim</a>
-            </div>
+                <article>
+                    <form action="sobreVoce.html" method="post">
 
-            <div class="container-links">
-                <a href="hobbies.html">Meus Hobbies</a>
-            </div>
+                        <label for="nome-completo">Nome Completo</label>
+                        <input type="text" name="nome-completo" id="nome-completo" required="true" autofocus >
+    
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" pattern="[A-Za-z]">
+                        
+                        <label for="dataNasc">Data Nascimento</label>
+                        <input type="date" name="dataNasc" id="dataNasc">
+    
+                        <label for="numIrmaos">Número de Irmãos</label>
+                        <input type="number" name="numIrmaos" id="numIrmaos"> 
+    
+                        <div>
+                            <label for="favColor">Cor Favorita</label>
+                            <input type="color" name="favColor" id="favColor"> 
+                        </div>
+    
+                        <label for="genero-favorito">Gênero Musical Favorito</label>
+                        <select name="genero-favorito" id="genero-favorito">
+                            <option value="sertanejo">Sertanjeo</option>
+                            <option value="funk">Funk</option>
+                            <option value="mpb">Rap</option>
+                            <option value="pagode">Pagode</option>
+                        </select>
+    
+                        <label for="">Possui Pets?</label>
+    
+                        <div>
+                            <label for="newsletter-sim">Sim</label>
+                            <input type="radio" name="newsletter" id="newsletter-sim" value="sim">
+
+                            <label for="newsletter-nao">Não</label>
+                            <input type="radio" name="newsletter" id="newsletter-nao" value="nao">
+                        </div>
+
+                        <label for="">Se sim, quais?</label>
+    
+                        <div>
+                            <input type="checkbox" name="cachorro" id="cachorro">
+                            <label for="cachorro">Cachorro</label>
+        
+                            <input type="checkbox" name="gato" id="gato">
+                            <label for="gato">Gato</label>
+                            
+                            <input type="checkbox" name="passaro" id="passaro">
+                            <label for="passaro">Pássaro</label>
+                            
+                            <input type="checkbox" name="tartaruga" id="tartaruga">
+                            <label for="tartaruga">Tartaruga</label>
+                        </div>
+    
+                        <label for="dias-exercicios">Dias em que faz exercícios</label>
+                        <input type="range" name="dias-exercicios" id="dias-exercicios" min="0" max="7"> 
+                        
+                        <label for="dias-exercicios">Quando suas aulas da faculdade começaram</label>
+                        <input type="month" name="dias-exercicios" id="dias-exercicios" min="0" max="7"> 
+    
+                        <label for="story">Conte uma curiosidade sobre você:</label>
+                        <br>    
+                        <textarea id="story" name="story" cols="40"></textarea>
+    
+                        <button type="submit">Enviar</button>
+    
+                    </form>
+                </article>
+
+            </section>
 
         </main>
 

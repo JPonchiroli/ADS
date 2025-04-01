@@ -4,86 +4,113 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Joao Ponchiroli</title>
-        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/style.css">
     </head>
+
     <body>
         <header>
+            <h1>João Pedro Ferreira Ponchiroli</h1>
+
             <nav>
-                <h1>João Pedro Ferreira Ponchiroli</h1>
+                <a href="index.html">Sobre Mim</a>
+
+                <a href="sobreVoce.html">Sobre Você</a>
             </nav>
         </header>
 
         <main>
-            <div class="container-image">
-                <img class="perfil-image" src="perfil.jpeg" alt="Foto João Ponchiroli">
-            </div>
 
-            <div class="container-perfil">
-                <h2 class="title-sobreMim">Sobre mim</h2>
-                <p>Tenho 18 anos, estou no 3° Semestre do Curso de Análise e Desenvolvimento de Sistemas. <br/>
-                Estou finalizando um estágio na área voltado para desenvolvimento Java Spring e AWS</p>
-            </div>
+            <section>
 
-            <div class="container-tecnologias">
-                <h3>Principais Tecnologias</h3>
+                <article>
+                    <div>
+                        <img src="assets/perfil.jpeg" class="fotoPerfil" alt="Foto João Ponchiroli">
+                    </div>
+    
+                    <div>
+                        <p>Tenho 18 anos, estou no 3° Semestre do Curso de Análise e Desenvolvimento de Sistemas. <br/>
+                        Recentemente finalizei um estágio na área voltado para desenvolvimento Java Spring e AWS.</p>
+                    </div>
+                </article>
 
-                <ul>
-                    <li>
-                        <img alt="Java" src="https://img.shields.io/badge/Java-f89820?style=for-the-badge&logo=openjdk&logoColor=white">
-                    </li>
-
-                    <li>
-                        <img alt="Spring" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white">
-                    </li>
-
-                    <li>
-                        <img alt="React" src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black">
-                    </li>
-                </ul>
-            </div>
-
-            <div class="container-formacoes">
-                <h3>Formações</h3>
+                <article>
+                    <div>
+                        <h3>Hobbies</h3>
+                    </div>
+    
+                    <div>
+                        <p>Gosto de jogar video games no meu tempo livre. Quanto estou com meus amigos gosto de jogar Fifa 
+                            e quando estou jogando sozinho gosto de jogar jogos de estratégia como TFT ou jogos da série souls.</p>
+                    </div>
+                </article>
                 
-                <table id="formacoes">
-                    <thead>
-                        <tr>
-                            <th>Nome Formação</th>
-                            <th>Instituição</th>
-                            <th>Data da Certificacao</th>
-                        </tr>
-                    </thead>
+                <article>
+                    <div>
+                        <h3>Principais Tecnologias</h3>
+                    </div>
 
-                    <tbody>
-                        <tr>
-                            <th>AWS Cloud Practitioner</th>
-                            <th>Amazon Web Services</th>
-                            <th>02/2025</th>
-                        </tr>
+                    <div>
+                        <ul>
 
-                        <tr>
-                            <th>Docker Fundamental</th>
-                            <th>Udemy</th>
-                            <th>12/2024</th>
-                        </tr>
+                            <li>
+                                <img alt="HTML" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+                            </li>
 
-                        <tr>
-                            <th>BootCamp Java</th>
-                            <th>Santander</th>
-                            <th>07/2024</th>
-                        </tr>
-                    </tbody>
-                </table>
+                            <li>
+                                <img alt="CSS" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+                            </li>
 
-            </div>
+                            <li>
+                                <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+                            </li>
 
-            <div class="container-links">
-                <a href="hobbies.html">Meus Hobbies</a>
-            </div>
+                            <li>
+                                <img alt="React" src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black">
+                            </li>
+    
+                            <li>
+                                <img alt="Spring" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white">
+                            </li>
+    
+                            <li>
+                                <img alt="Java" src="https://img.shields.io/badge/Java-f89820?style=for-the-badge&logo=openjdk&logoColor=white">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="container-links">
-                <a href="sobreVoce.html">Sobre Você</a>
-            </div>
+                <article>
+                    <div>
+                        <h3>Formações</h3>
+                    </div>
+                    
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome Formação</th>
+                                    <th>Instituição</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                <tr>
+                                    <th>AWS Cloud Practitioner</th>
+                                    <th>Amazon Web Services</th>
+                                </tr>
+    
+                                <tr>
+                                    <th>BootCamp Java Spring</th>
+                                    <th>Santander</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+        </section>
 
         </main>
 
