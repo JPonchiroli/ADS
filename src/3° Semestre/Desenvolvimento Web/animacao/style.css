@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.titulo {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h1 {
+    width: 25%;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+
+    color:  #FFF;
+    background-color: green;
+
+    transition: width 6s, color 6s;
+    transition-delay: 2s;
+}
+
+h1:hover{
+    color: green;
+    background-color: #0D0;
+    width: 80%;
+}
+
+.bola {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: darkgray;
+    margin: 0 auto;
+
+    box-shadow: -10px -10px 5px #000 inset;
+
+    animation-name: quicar;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+@keyframes quicar {
+    from {}
+  to {transform: translateY(750px);}
+}
