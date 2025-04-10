@@ -15,6 +15,7 @@ public class ListaComArray {
     public ListaComArray(int initialCapacity) {
         this(initialCapacity, true);
     }
+
     public ListaComArray(int initialCapacity, boolean resizable) {
         this.array = new Integer[initialCapacity];
         this.initialCapacity = initialCapacity;
@@ -50,9 +51,10 @@ public class ListaComArray {
             }
         }
 
-        for (int i = counter; i < index; i--) {
+        for (int i = counter; i > index; i--) {
             array[i] = array[i - 1];
         }
+
         array[index] = obj;
         counter++;
         return true;
@@ -61,24 +63,118 @@ public class ListaComArray {
     private void resizeArrayList() {
         Integer novo[] = new Integer[array.length + X];
 
-        for (int i = 0; i < array.length; i++) {
-            novo[i] = array[i];
-
-        }
+        System.arraycopy(array, 0, novo, 0, counter);
 
         array = novo;
     }
-    public Integer remove(int index) {  return 0;}
+
+    public Integer remove(int index) throws ArrayIndexOutOfBoundsException{
+        if (index < 0 || index >= counter) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        Integer temp = get(index);
+
+        for (int i = (counter - 1); i >= index; i--) {
+            array[i - 1] = array[i];
+        }
+
+        counter--;
+
+        return temp;
+    }
+
     public boolean removeFirst(Integer element) { return false;}
-    public Integer get(int index) { return 0;}
-    public void clear() {}
-    public Integer set(int index, Integer element) { return 0;}
-    public int size() { return 0;}
-    public boolean isEmpty() { return false;}
-    public boolean isFull() { return false;}
-    public int contains(Integer element) { return 0;}
-    public int indexOf(Integer element) { return 0;}
-    public int lastIndexOf(Integer element) { return 0;}
+
+    public Integer get(int index) throws ArrayIndexOutOfBoundsException{
+        if (index < 0 || index >= counter) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        return array[index];
+    }
+
+    public void clear() {
+        if (resizable) {
+            array = new Integer[initialCapacity];
+        }
+
+        counter = 0;
+    }
+
+    public Integer set(int index, Integer element) throws ArrayIndexOutOfBoundsException{
+        if (index < 0 || index >= counter) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        Integer temp = get(index);
+        array[index] = element;
+
+        return  temp;
+    }
+
+    public int size() {
+        return counter;
+    }
+
+    public boolean isEmpty() {
+       return (counter == 0);
+    }
+
+    public boolean isFull() {
+        if (!resizable) {
+            return (counter == array.length);
+        }
+        return false;
+    }
+
+    public boolean contains(Integer element) {
+        return indexOf(element) != -1;
+    }
+
+    public int indexOf(Integer element) {
+        for (int i = 0; i < counter; i++) {
+            if (array[i] == element) {
+                return  i;
+            }
+        }
+
+        return -1;
+    }
+
+    public int lastIndexOf(Integer element) {
+        for (int i = (counter - 1); i >= 0; i--) {
+            if (array[i] == element) {
+                return  i;
+            }
+        }
+
+        return -1;
+    }
+
     public Integer[] toArray() { return new Integer[0];}
-    public String toString(){ return "";}
+
+    public String toString(){
+        String myarray1 = "[ ";
+
+        for (int i = 0; i < counter; i++) {
+            if (i != (counter - 1)) {
+                myarray1 += array[i] + ", ";
+            } else {
+                myarray1 += array[i] + " ]";
+            }
+        }
+
+        String myarray2 = "[";
+
+        for (int i = 0; i < array.length; i++) {
+            if (i != (array.length - 1)) {
+                myarray2 += array[i] + ", ";
+            } else {
+                myarray2 += array[i] + " ]";
+            }
+        }
+
+        return myarray1;
+    }
 }
