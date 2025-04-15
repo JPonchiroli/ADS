@@ -1,0 +1,118 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+header h1{
+    font-size: 3em;
+    color: #0a2e01;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 0.2em;
+}
+
+header p {
+    text-align: center;
+    padding: 0.4em;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #0a2e01;
+}
+
+header div img {
+    width: 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0a2e01;
+}
+
+nav a {
+    color: #FFF;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    width: 100% ;
+}
+
+nav a:hover {
+    cursor: pointer;
+    background-color: #0c6b00;
+}
+
+main h1 {
+    display: flex;
+    justify-content: center;
+    padding: 0.8em;
+    font-size: 2em;
+}
+
+section {
+    display: grid;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+form {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+form li {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 1em;
+}
+
+form label {
+    margin-bottom: 0.4em;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    padding: 0.6em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    font-size: 1em;
+    resize: vertical;
+}
+
+form textarea {
+    min-height: 100px;
+}
+
+form input[type="submit"] {
+    background-color: #0a2e01;
+    color: white;
+    padding: 0.8em;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0c6b00;
+}
