@@ -84,7 +84,11 @@ public class ListaComArray {
         return temp;
     }
 
-    public boolean removeFirst(Integer element) { return false;}
+    public boolean removeFirst(Integer element) {
+        int num = indexOf(element);
+        remove(num);
+        return true;
+    }
 
     public Integer get(int index) throws ArrayIndexOutOfBoundsException{
         if (index < 0 || index >= counter) {
