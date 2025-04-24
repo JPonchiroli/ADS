@@ -46,8 +46,56 @@ public class ListaComEncad {
         counter++;
     }
 
-    public Integer remove(int index) { return 0;}
-    public boolean removeFirst(Integer element) { return false;}
+    public Integer remove(int index) throws ArrayIndexOutOfBoundsException{
+        if (index < 0 || index >= counter) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        Integer info = null;
+
+        if (index == 0) {
+            info = first.getInfo();
+            first = first.getNext();
+        } else {
+            NoLista aux = first;
+            NoLista ant = null;
+            for (int i = 0; i < index; i++) {
+                ant = aux;
+                aux = aux.getNext();
+            }
+            info = aux.getInfo();
+            ant.setNext(aux.getNext());
+        }
+
+        counter--;
+        return info;
+    }
+
+    public boolean removeFirst(Integer element) throws ArrayIndexOutOfBoundsException{
+        NoLista aux = first;
+        NoLista ant = null;
+        int i = 0;
+        boolean removed = false;
+
+        while (aux != null && removed == false) {
+            if (aux.getInfo().equals(element)) {
+                if (i == 0) {
+                    first = first.getNext();
+                } else if (i == counter - 1){
+                    ant.setNext(null);
+                    last = ant;
+                } else {
+                    ant.setNext(aux.getNext());
+                }
+                removed = true;
+            }
+            i++;
+            ant = aux;
+            aux = aux.getNext();
+        }
+        counter--;
+        return removed;
+    }
 
     public Integer get(int index) throws ArrayIndexOutOfBoundsException{
         if (index < 0 || index >= counter) {
@@ -89,10 +137,47 @@ public class ListaComEncad {
 
     public boolean contains(Integer element) { return (indexOf(element) != -1); }
 
-    public int indexOf(Integer element) { return 0;}
+    public int indexOf(Integer element) {
+        int index = 0;
 
-    public int lastIndexOf(Integer element) {return 0;}
-    public Integer[] toArray() { return new Integer[0];}
+        NoLista aux = first;
+        while(aux != null) {
+            if (aux.getInfo().equals(element)) {
+                return index;
+            }
+            aux = aux.getNext();
+            index++;
+        }
+        return -1;
+    }
+
+    public int lastIndexOf(Integer element) {
+        int index = 0;
+        int lastIndex = -1;
+
+        NoLista aux = first;
+        while(aux != null) {
+            if (aux.getInfo().equals(element)) {
+                lastIndex = index;
+            }
+            aux = aux.getNext();
+            index++;
+        }
+        return lastIndex;
+    }
+
+    public Integer[] toArray() {
+        Integer[] array = new Integer[counter];
+
+        NoLista aux = first;
+
+        for (int i = 0; i < counter; i++) {
+            array[i] = aux.getInfo();
+            aux = aux.getNext();
+        }
+
+        return array;
+    }
 
     public String toString() {
         String myarray1 = "[";
