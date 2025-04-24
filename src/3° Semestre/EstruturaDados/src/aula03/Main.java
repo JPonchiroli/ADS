@@ -21,7 +21,7 @@ public class Main {
         System.out.println(lista);
         */
 
-        ListaComEncad numeros = new ListaComEncad();
+        ListaComEncad_Antigo numeros = new ListaComEncad_Antigo();
         System.out.println(numeros);
         numeros.add(903);
         numeros.add(105);

@@ -1,12 +1,12 @@
 package aula03;
 
-public class ListaComEncad {
+public class ListaComEncad_Antigo {
 
     private NoLista first;
     private NoLista last;
     private int counter;
 
-    public ListaComEncad(){
+    public ListaComEncad_Antigo(){
         first = null;
         last = null;
         counter = 0;

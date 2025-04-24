@@ -1,8 +1,10 @@
 package aula03;
 
-public class ListaComArray {
+import java.util.List;
 
-    private Integer[]           array;
+public class ListaComArray<E> implements Lista<E> {
+
+    private E[]           array;
     private boolean             resizable;
     private int                 initialCapacity;
     private int                 counter;
@@ -17,168 +19,74 @@ public class ListaComArray {
     }
 
     public ListaComArray(int initialCapacity, boolean resizable) {
-        this.array = new Integer[initialCapacity];
+        this.array = (E[]) new Object[initialCapacity];
         this.initialCapacity = initialCapacity;
         this.resizable = resizable;
         this.counter = 0;
     }
 
-    public boolean add(Integer obj) {
-        if (counter == array.length) {
-            if (resizable) {
-                resizeArrayList();
-            } else {
-                return false;
-            }
-        }
+    @Override
+    public void add(E element) {
 
-        array[counter] = obj;
-        counter++;
-
-        return true;
     }
 
-    public boolean add(int index, Integer obj) {
-        if (index < 0 || index > counter) {
-            return false;
-        }
+    @Override
+    public void add(int index, E element) {
 
-        if (counter == array.length) {
-            if (resizable) {
-                resizeArrayList();
-            } else {
-                return false;
-            }
-        }
-
-        for (int i = counter; i > index; i--) {
-            array[i] = array[i - 1];
-        }
-
-        array[index] = obj;
-        counter++;
-        return true;
     }
 
-    private void resizeArrayList() {
-        Integer novo[] = new Integer[array.length + X];
-
-        System.arraycopy(array, 0, novo, 0, counter);
-
-        array = novo;
+    @Override
+    public E remove(int index) throws Exception {
+        return null;
     }
 
-    public Integer remove(int index) throws ArrayIndexOutOfBoundsException{
-        if (index < 0 || index >= counter) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-
-        Integer temp = get(index);
-
-        for (int i = (counter - 1); i >= index; i--) {
-            array[i - 1] = array[i];
-        }
-
-        counter--;
-
-        return temp;
-    }
-
-    public boolean removeFirst(Integer element) {
-        int num = indexOf(element);
-        remove(num);
-        return true;
-    }
-
-    public Integer get(int index) throws ArrayIndexOutOfBoundsException{
-        if (index < 0 || index >= counter) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-
-        return array[index];
-    }
-
-    public void clear() {
-        if (resizable) {
-            array = new Integer[initialCapacity];
-        }
-
-        counter = 0;
-    }
-
-    public Integer set(int index, Integer element) throws ArrayIndexOutOfBoundsException{
-        if (index < 0 || index >= counter) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-
-        Integer temp = get(index);
-        array[index] = element;
-
-        return  temp;
-    }
-
-    public int size() {
-        return counter;
-    }
-
-    public boolean isEmpty() {
-       return (counter == 0);
-    }
-
-    public boolean isFull() {
-        if (!resizable) {
-            return (counter == array.length);
-        }
+    @Override
+    public boolean removeFirst(E element) throws Exception {
         return false;
     }
 
-    public boolean contains(Integer element) {
-        return indexOf(element) != -1;
+    @Override
+    public E get(int index) throws Exception {
+        return null;
     }
 
-    public int indexOf(Integer element) {
-        for (int i = 0; i < counter; i++) {
-            if (array[i] == element) {
-                return  i;
-            }
-        }
-
-        return -1;
+    @Override
+    public E set(int index, E element) throws Exception {
+        return null;
     }
 
-    public int lastIndexOf(Integer element) {
-        for (int i = (counter - 1); i >= 0; i--) {
-            if (array[i] == element) {
-                return  i;
-            }
-        }
+    @Override
+    public void clear() {
 
-        return -1;
     }
 
-    public Integer[] toArray() { return new Integer[0];}
+    @Override
+    public int size() {
+        return 0;
+    }
 
-    public String toString(){
-        String myarray1 = "[ ";
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
 
-        for (int i = 0; i < counter; i++) {
-            if (i != (counter - 1)) {
-                myarray1 += array[i] + ", ";
-            } else {
-                myarray1 += array[i] + " ]";
-            }
-        }
+    @Override
+    public boolean contains(E element) {
+        return false;
+    }
 
-        String myarray2 = "[";
+    @Override
+    public int indexOf(E element) {
+        return 0;
+    }
 
-        for (int i = 0; i < array.length; i++) {
-            if (i != (array.length - 1)) {
-                myarray2 += array[i] + ", ";
-            } else {
-                myarray2 += array[i] + " ]";
-            }
-        }
+    @Override
+    public int lastIndexOf(E element) {
+        return 0;
+    }
 
-        return myarray1;
+    @Override
+    public E[] toArray() {
+        return null;
     }
 }
