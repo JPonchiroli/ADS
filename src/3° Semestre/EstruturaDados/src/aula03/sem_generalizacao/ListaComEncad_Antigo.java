@@ -1,4 +1,6 @@
-package aula03;
+package aula03.sem_generalizacao;
+
+import aula03.NoLista;
 
 public class ListaComEncad_Antigo {
 

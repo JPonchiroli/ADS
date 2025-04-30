@@ -1,31 +1,33 @@
 package aula03;
 
-public class NoLista {
-    private Integer info;
-    private NoLista next;
 
-    public NoLista(){
+public class NoLista<E> {
+
+    private E info;
+    private NoLista<E> next;
+
+    public NoLista() {
         this(null, null);
     }
 
-    public NoLista(Integer info, NoLista next) {
+    public NoLista(E info, NoLista<E> next) {
         this.info = info;
         this.next = next;
     }
 
-    public Integer getInfo() {
+    public E getInfo() {
         return info;
     }
 
-    public void setInfo(Integer info) {
+    public void setInfo(E info) {
         this.info = info;
     }
 
-    public NoLista getNext() {
+    public NoLista<E> getNext() {
         return next;
     }
 
-    public void setNext(NoLista next) {
+    public void setNext(NoLista<E> next) {
         this.next = next;
     }
 }

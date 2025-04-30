@@ -1,4 +1,4 @@
-package aula03;
+package aula03.sem_generalizacao;
 
 public class ListaComArray_Antigo {
 
