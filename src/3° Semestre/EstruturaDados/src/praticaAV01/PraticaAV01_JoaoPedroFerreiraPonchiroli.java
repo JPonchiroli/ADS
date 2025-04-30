@@ -1,7 +1,5 @@
 package praticaAV01;
 
-import aula02.texto.leituraObj.Pessoa;
-
 import java.io.*;
 import java.util.Scanner;
 
