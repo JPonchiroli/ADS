@@ -46,7 +46,7 @@ public class FilaComEncad implements Fila{
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return (counter == 0);
     }
 
     @Override
