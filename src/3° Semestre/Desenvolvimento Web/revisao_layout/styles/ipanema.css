@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #DC0A6C;
+    padding: 1rem 0;
+    display: grid;
+    place-items: center;
+}
+
+.cabecalho {
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.5rem;
+    justify-content: end;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.caminho {
+    font-size: 0.875rem;
+    color: #888;
+}
+
+.produto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.galeria {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+}
+
+.desconto {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #DC0A6C;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.imagem-principal {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.miniaturas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 0.5rem;
+}
+
+.miniatura {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.miniatura.ativa {
+    border-color: #DC0A6C;
+}
+
+.info {
+    display: grid;
+    gap: 1rem;
+}
+
+.info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+}
+
+.codigo {
+    color: #888;
+    font-size: 0.875rem;
+}
+
+.preco {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preco-original {
+    color: #FF8866;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.preco-atual {
+    color: #DC0A6C;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.parcelamento {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.cores, .tamanhos {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.opcoes-cores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+    gap: 0.5rem;
+}
+
+.opcoes-cores img {
+    width: 100%;
+    height: 3rem;
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.opcoes-cores .ativa {
+    border-color: #DC0A6C;
+}
+
+.cor-nome {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.opcoes-tamanhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+}
+
+.opcoes-tamanhos span {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.opcoes-tamanhos .ativo {
+    border-color: #DC0A6C;
+    color: #DC0A6C;
+    font-weight: bold;
+}
+
+.botao-comprar {
+    width: 100%;
+    background-color: #DC0A6C;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.descricao {
+    margin-top: 2rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.descricao h3 {
+    font-weight: 500;
+}
+
+.sustentabilidade {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+    display: grid;
+    gap: 1rem;
+}
+
+.sustentabilidade h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.itens-sustentaveis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #22BB77;
+    font-weight: 500;
+}

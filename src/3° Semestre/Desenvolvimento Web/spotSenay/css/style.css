@@ -1,26 +1,14 @@
 * {
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-header h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3em;
-    color: #09093B;
-    letter-spacing: 0.1em;
-    text-align: center;
-    padding: 0.2em;
-}
-
-header p {
-    text-align: center;
-    padding: 0.4em;
+    margin: 0px;
+    padding: 0px;
 }
 
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: #191957;
+    background-color: rgb(255, 105, 130);
 }
 
 nav a {
