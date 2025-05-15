@@ -21,7 +21,7 @@ public class Main {
 
         lista.remove(0);
         System.out.println(lista);
-        */
+
 
         ListaComEncad_Antigo numeros = new ListaComEncad_Antigo();
         System.out.println(numeros);
@@ -40,6 +40,6 @@ public class Main {
         System.out.println(numeros);
         numeros.add(4, 66666);
         System.out.println(numeros);
-
+*/
     }
 }

@@ -6,15 +6,12 @@ public class Aluno {
     private Double mediaGeral;
     private Aluno prox;
 
-    public Aluno(){
-        this("", -1, 0.0, null);
-    }
+    public Aluno(){}
 
-    public Aluno(String nome, Integer matricula, Double mediaGeral, Aluno prox) {
+    public Aluno(String nome, Integer matricula, Double mediaGeral) {
         this.nome = nome;
         this.matricula = matricula;
         this.mediaGeral = mediaGeral;
-        this.prox = prox;
     }
 
     public String getNome() {

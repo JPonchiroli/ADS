@@ -3,7 +3,7 @@ package aula_listas.sem_generalizacao;
 import aula_listas.NoLista;
 
 public class ListaComEncad_Antigo {
-
+/*
     private NoLista first;
     private NoLista last;
     private int counter;
@@ -195,5 +195,6 @@ public class ListaComEncad_Antigo {
 
         return  myarray1;
     }
+ */
 
 }

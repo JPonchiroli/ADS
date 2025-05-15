@@ -34,22 +34,22 @@ public class TabelaHash {
 
     public void insere(Aluno aluno) {
         int h = hash(aluno.getMatricula());
-
         Aluno p = tabela[h];
+        // procura p
         while (p != null) {
-            if(p.getMatricula() == aluno.getMatricula()) {
+            if (p.getMatricula() == aluno.getMatricula()) {
                 break;
             }
-
             p = p.getProx();
         }
-
+        // nao encontrou aluno, entao cria novo
         if (p == null) {
             p = new Aluno();
             p.setMatricula(aluno.getMatricula());
             p.setProx(tabela[h]);
+            tabela[h] = p;
         }
-
+        // atribui/modifica informacoes
         p.setNome(aluno.getNome());
         p.setMediaGeral(aluno.getMediaGeral());
     }
