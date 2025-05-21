@@ -91,17 +91,45 @@ public class ArvoreBinariaComArray {
         return Arrays.toString(array);
     }
 
+    private StringBuilder preOrdem(int index) {
+        StringBuilder sb = new StringBuilder();
+        if (index < array.length && array[index] != null) {
+            sb.append(array[index]).append(" ");
+            sb.append(preOrdem(2 * index + 1));
+            sb.append(preOrdem(2 * index + 2));
+        }
+        return sb;
+    }
+
     public String toStringPreOrdem() {
-        return "";
+        return preOrdem(0).toString().trim();
+    }
+
+    private StringBuilder inOrdem(int index) {
+        StringBuilder sb = new StringBuilder();
+        if (index < array.length && array[index] != null) {
+            sb.append(inOrdem(2 * index + 1));
+            sb.append(array[index]).append(" ");
+            sb.append(inOrdem(2 * index + 2));
+        }
+        return sb;
     }
 
     public String toStringInOrdem() {
-        return"";
+        return inOrdem(0).toString().trim();
+    }
+
+    private StringBuilder posOrdem(int index) {
+        StringBuilder sb = new StringBuilder();
+        if (index < array.length && array[index] != null) {
+            sb.append(posOrdem(2 * index + 1));
+            sb.append(posOrdem(2 * index + 2));
+            sb.append(array[index]).append(" ");
+        }
+        return sb;
     }
 
     public String toStringPosOrdem() {
-        return "";
+        return posOrdem(0).toString().trim();
     }
-
-
 }
