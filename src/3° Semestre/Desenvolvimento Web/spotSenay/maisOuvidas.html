@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spotsenay</title>
+
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="http://cdn.datatables.net/2.3.1/css/dataTables.dataTables.min.css">
+        <link rel="stylesheet" href="css/maisOuvidas.css">
+    </head>
+    <body>
+
+        <header id="cabecalho">
+            <h1 class="text-3xl font-bold underline ">Spotsenay</h1>
+            <p id="tagline">Música para todos os alunos</p>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="maisOuvidas.html">Mais Ouvidas</a>
+                <a href="#">Perfil</a> 
+                <a href="cadastro.html">Cadastro</a>
+                <a href="#">Contato</a>
+            </nav>
+
+        </header>
+        
+        <main>
+            <h2>As mais ouvidas</h2>
+
+            <section>
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Músicas</th>
+                            <th>Artista</th>
+                            <th>Gênero</th>
+                            <th>Ano</th>
+                            <th>Duração</th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+
+        </main>
+
+        <footer id="rodape">
+            <p>Desenvolvido pelo SENAI@</p>
+        </footer>
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="http://cdn.datatables.net/2.3.1/js/dataTables.min.js"></script>
+    <script src="js/script.js"></script>
+</html>
