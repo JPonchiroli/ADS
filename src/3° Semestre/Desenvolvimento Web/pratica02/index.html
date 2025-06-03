@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard Sistema Varejo</title>
+    </head>
+    <body>
+        <div id="chart_div"></div>
+    </body>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {packages: ['corechart']});
+  google.charts.setOnLoadCallback(drawBasic);
+
+  function drawBasic() {
+  
+    const listaMeses = [
+      '', 'Janeiro','Fevereiro','Março','Abril','Maio', 'Junho',
+      'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+
+    const vendasPorMes = [0, 20, 40, 17, 50, 33, 77, 48, 55, 80, 64, 93]; 
+
+    const data = new google.visualization.DataTable();
+    data.addColumn('number', 'Mês'); 
+    data.addColumn('number', 'Número de Vendas'); 
+    data.addColumn({type: 'string', role: 'tooltip'}); 
+
+    for (let i = 1; i <= 12; i++) {
+      data.addRow([
+        i,
+        vendasPorMes[i - 1],
+        `${listaMeses[i]}: ${vendasPorMes[i - 1]} vendas`
+      ]);
+    }
+
+    const options = {
+      hAxis: {
+        title: 'Meses',
+        ticks: [
+          {v: 1, f: 'Jan'}, {v: 2, f: 'Fev'}, {v: 3, f: 'Mar'},
+          {v: 4, f: 'Abr'}, {v: 5, f: 'Mai'}, {v: 6, f: 'Jun'},
+          {v: 7, f: 'Jul'}, {v: 8, f: 'Ago'}, {v: 9, f: 'Set'},
+          {v: 10, f: 'Out'}, {v: 11, f: 'Nov'}, {v: 12, f: 'Dez'}
+        ]
+      },
+      vAxis: {
+        title: 'Vendas',
+        viewWindow: {
+          min: 0,
+          max: 100
+        }
+      },
+      tooltip: { isHtml: false }, 
+      pointSize: 5 
+    };
+
+    const chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+
+    
+</html>

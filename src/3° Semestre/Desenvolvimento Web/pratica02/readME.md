@@ -2,7 +2,7 @@
 
 ## ✅ Principais Indicadores com Sugestões de Gráfico
 
-1. [ ] **Receita mensal**  
+1. [x] **Receita mensal**  
    - *O que mede:* Total em vendas por mês  
    - *Gráfico ideal:* Gráfico de **linhas**
 
