@@ -1,66 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard Sistema Varejo</title>
-    </head>
-    <body>
-        <div id="chart_div"></div>
-    </body>
+<html lang="pt-BR">
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-        google.charts.load('current', {packages: ['corechart']});
-  google.charts.setOnLoadCallback(drawBasic);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Sistema Varejo</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
 
-  function drawBasic() {
-  
-    const listaMeses = [
-      '', 'Janeiro','Fevereiro','Março','Abril','Maio', 'Junho',
-      'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-    ];
+<body>
+  <div class="header">
+    <h1>Dashboard de Performance - Loja de Varejo</h1>
+    <p>Monitoramento dos principais indicadores de desempenho</p>
+  </div>
 
-    const vendasPorMes = [0, 20, 40, 17, 50, 33, 77, 48, 55, 80, 64, 93]; 
+  <div class="dashboard-container">
+    <div class="chart-container">
+      <div class="chart-title">1. Receita Mensal (em R$ mil)</div>
+      <div id="chart_receita" class="chart"></div>
+    </div>
 
-    const data = new google.visualization.DataTable();
-    data.addColumn('number', 'Mês'); 
-    data.addColumn('number', 'Número de Vendas'); 
-    data.addColumn({type: 'string', role: 'tooltip'}); 
+    <div class="chart-container">
+      <div class="chart-title">2. Taxa de Conversão de Vendas (%)</div>
+      <div id="chart_conversao" class="chart"></div>
+    </div>
 
-    for (let i = 1; i <= 12; i++) {
-      data.addRow([
-        i,
-        vendasPorMes[i - 1],
-        `${listaMeses[i]}: ${vendasPorMes[i - 1]} vendas`
-      ]);
-    }
+    <div class="chart-container">
+      <div class="chart-title">3. Nível de Satisfação do Cliente (NPS)</div>
+      <div id="chart_nps" class="chart"></div>
+    </div>
 
-    const options = {
-      hAxis: {
-        title: 'Meses',
-        ticks: [
-          {v: 1, f: 'Jan'}, {v: 2, f: 'Fev'}, {v: 3, f: 'Mar'},
-          {v: 4, f: 'Abr'}, {v: 5, f: 'Mai'}, {v: 6, f: 'Jun'},
-          {v: 7, f: 'Jul'}, {v: 8, f: 'Ago'}, {v: 9, f: 'Set'},
-          {v: 10, f: 'Out'}, {v: 11, f: 'Nov'}, {v: 12, f: 'Dez'}
-        ]
-      },
-      vAxis: {
-        title: 'Vendas',
-        viewWindow: {
-          min: 0,
-          max: 100
-        }
-      },
-      tooltip: { isHtml: false }, 
-      pointSize: 5 
-    };
+    <div class="chart-container">
+      <div class="chart-title">4. Ticket Médio por Venda (R$)</div>
+      <div id="chart_ticket" class="chart"></div>
+    </div>
 
-    const chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-  }
-    </script>
+    <div class="chart-container">
+      <div class="chart-title">5. Volume de Vendas por Categoria</div>
+      <div id="chart_categorias" class="chart"></div>
+    </div>
 
-    
+    <div class="chart-container">
+      <div class="chart-title">6. Custo de Aquisição por Cliente (R$)</div>
+      <div id="chart_cac" class="chart"></div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">7. Taxa de Retorno de Produtos (%)</div>
+      <div id="chart_retorno" class="chart"></div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">8. Margem de Lucro Bruta (%)</div>
+      <div id="chart_margem" class="chart"></div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">9. Estoque Médio por Período (unidades)</div>
+      <div id="chart_estoque" class="chart"></div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">10. Número de Clientes Recorrentes</div>
+      <div id="chart_recorrentes" class="chart"></div>
+    </div>
+
+    <div class="clients-gallery">
+      <div class="gallery-title">Principais Clientes do Mês</div>
+      <div class="client-logos" id="clientLogos">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
