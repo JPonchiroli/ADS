@@ -2,29 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estrada</title>
-
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrada Horizontal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="ceu"></div>
+  <div class="ceu">
+    <div class="nuvem"></div>
+    <div class="nuvem"></div>
+  </div>
 
   <div class="estrada">
-    <div class="linhas">
-      <div class="linha"></div>
-      <div class="linha"></div>
-      <div class="linha"></div>
-      <div class="linha"></div>
-      <div class="linha"></div>
-      <div class="linha"></div>
-    </div>
+    <div class="linhas"></div>
 
     <div class="containerCarro" id="carro">
-      <div class="carro">
+      <div class="carro" id="carroJogador">
         <div class="vidro"></div>
+        <div class="vidro-traseiro"></div>
         <div class="capo"></div>
         <div class="farol"></div>
         <div class="lanterna"></div>
@@ -36,24 +32,7 @@
     </div>
   </div>
 
-
-  <script>
-    const carro = document.getElementById('carro');
-    let posX = 50; // porcentagem do centro
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') {
-        posX -= 5;
-      } else if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') {
-        posX += 5;
-      }
-
-      // Limites entre 0% e 100% (ajustado para manter dentro da estrada)
-      posX = Math.max(5, Math.min(95, posX));
-      carro.style.left = posX + '%';
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
