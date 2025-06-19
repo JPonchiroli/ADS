@@ -2,39 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrada</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrada Horizontal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-    <body>
-        <div class="ceu"></div>
+<body>
+  <div class="ceu">
+    <div class="nuvem"></div>
+    <div class="nuvem"></div>
+  </div>
 
-        <div class="estrada">
-            <div class="linhas">
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>
-              </div>
+  <div class="estrada">
+    <div class="linhas"></div>
 
-              <div class="containerCarro">
-                <div class="carro">
-                  <div class="vidro"></div> 
-                  <div class="capo"></div>
-                  <div class="farol"></div> 
-                  <div class="lanterna"></div> 
-                  <div class="rodas">
-                    <div class="roda"></div>
-                    <div class="roda"></div>
-                  </div>
-                </div>
-              </div>
+    <div class="containerCarro" id="carro">
+      <div class="carro" id="carroJogador">
+        <div class="vidro"></div>
+        <div class="vidro-traseiro"></div>
+        <div class="capo"></div>
+        <div class="farol"></div>
+        <div class="lanterna"></div>
+        <div class="rodas">
+          <div class="roda"></div>
+          <div class="roda"></div>
         </div>
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 
 </html>

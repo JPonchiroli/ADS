@@ -1,121 +1,205 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    overflow: hidden;
-    height: 100vh;
-    background-color: rgb(131, 199, 255);
-}
-
-.ceu {
-    background-color: rgb(131, 199, 255);
-    height: 60vh;
-    width: 100%;
-}
-
-.estrada {
-    background-color: rgb(52, 54, 56);
-    height: 40vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.linhas {
-    position: absolute;
-    bottom: 50%;
-    width: 200%;
-    height: 10px;
-    background-image: repeating-linear-gradient(
-        to right,
-        white 0 80px,
-        transparent 80px 160px
-    );
-    animation: moverLinhas 2s linear infinite;
-}
-
-@keyframes moverLinhas {
-    0% {
-        transform: translateX(0);
+    * {
+        margin: 0;
+        box-sizing: border-box;
     }
-    100% {
-        transform: translateX(-160px);
+
+    body {
+        overflow: hidden;
+        height: 100vh;
+        background-color: skyblue;
     }
-}
 
-.containerCarro {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+    .ceu {
+        background: linear-gradient(skyblue, white);
+        height: 60vh;
+        position: relative;
+        overflow: hidden;
+    }
 
-.carro {
-    width: 200px;
-    height: 80px;
-    background-color: red;
-    border-radius: 25px 35px 0 0;
-    position: relative;
-}
+    .nuvem {
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        background: white;
+        border-radius: 50%;
+        animation: moverNuvem 20s linear infinite;
+    }
 
-.capo {
-    width: 130px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: 35px;
-}
+    .nuvem::before,
+    .nuvem::after {
+        content: '';
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+    }
 
-.rodas {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: -20px;
-    width: 100%;
-    padding: 0 10px;
-}
+    .nuvem::before {
+        width: 60px;
+        height: 60px;
+        left: -30px;
+        top: 0;
+    }
 
-.roda {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: gray;
-}
+    .nuvem::after {
+        width: 60px;
+        height: 60px;
+        left: 30px;
+        top: 0;
+    }
 
-.vidro {
-    width: 80px;
-    height: 40px;
-    background-color: rgba(173, 216, 230);
-    border-radius: 10px;
-    position: absolute;
-    top: -20px;
-    left: 70px;
-    z-index: 1;
-    border: 2px solid #b0c4de;
-}
+    @keyframes moverNuvem {
+        0% {
+            left: 100%;
+        }
 
-/* Farol dianteiro (lado direito) */
-.farol {
-    width: 15px;
-    height: 25px;
-    background-color: gold;
-    border-radius: 50% 0 0 50%;
-    position: absolute;
-    right: 0px;
-    top: 35px;
-}
+        100% {
+            left: -200px;
+        }
+    }
 
-/* Lanterna traseira (lado esquerdo) */
-.lanterna {
-    width: 15px;
-    height: 25px;
-    background-color: orange;
-    border-radius: 0 50% 50% 0;
-    position: absolute;
-    left: 0px;
-    top: 35px;
-}
+    .estrada {
+        background-color: #333;
+        height: 40vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .linhas {
+        position: absolute;
+        bottom: 50%;
+        width: 200%;
+        height: 10px;
+        background-image: repeating-linear-gradient(to right, white 0 80px, transparent 80px 160px);
+        animation: moverLinhas 2s linear infinite;
+    }
+
+    @keyframes moverLinhas {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-160px);
+        }
+    }
+
+    .containerCarro {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: transform 0.05s ease-in-out;
+    }
+
+    #carro {
+        transition: left 0.2s ease-in-out;
+    }
+
+    .carro {
+        width: 200px;
+        height: 80px;
+        background-color: red;
+        border-radius: 25px 35px 0 0;
+        position: relative;
+    }
+
+    .capo {
+        width: 130px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: 35px;
+    }
+
+    .vidro {
+        width: 80px;
+        height: 40px;
+        background-color: rgba(173, 216, 230);
+        border-radius: 10px;
+        position: absolute;
+        top: -20px;
+        left: 70px;
+        z-index: 1;
+        border: 2px solid #b0c4de;
+    }
+
+    .vidroTraseiro {
+        width: 50px;
+        height: 30px;
+        background-color: rgba(173, 216, 230, 0.8);
+        border-radius: 8px;
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        border: 2px solid #b0c4de;
+    }
+
+    .lanterna {
+        width: 15px;
+        height: 25px;
+        background-color: orange;
+        border-radius: 0 50% 50% 0;
+        position: absolute;
+        left: 0px;
+        top: 35px;
+    }
+
+    .farol {
+        width: 15px;
+        height: 25px;
+        background-color: gold;
+        border-radius: 50% 0 0 50%;
+        position: absolute;
+        right: 0px;
+        top: 35px;
+    }
+
+    .rodas {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .roda {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: gray;
+        border: 2px solid black;
+        animation: girarRoda 0.5s linear infinite;
+    }
+
+    @keyframes girarRoda {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .carro-inimigo {
+        position: absolute;
+        bottom: 100%;
+        width: 200px;
+        height: 80px;
+        background-color: blue;
+        border-radius: 25px 35px 0 0;
+        animation: descerCarro 6s linear infinite;
+    }
+
+    @keyframes descerCarro {
+        0% {
+            bottom: 100%;
+        }
+
+        100% {
+            bottom: -100px;
+        }
+    }
