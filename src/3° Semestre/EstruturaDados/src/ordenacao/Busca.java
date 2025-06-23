@@ -112,7 +112,52 @@ public class Busca {
         return -1;
     }
 
+    public static int buscaTernaria(int chave, int vetor[]) {
+        Ordenacao.quickSort(vetor);
 
-    public static int buscaTernaria(int chave, int vetor[]) { return -1;}
-    public static int buscaSalto(int chave, int vetor[]) { return -1;}
+        return buscaTernariaAux(chave, vetor, 0, vetor.length - 1);
+    }
+
+    private static int buscaTernariaAux(int chave, int vetor[], int ini, int fim) {
+        if (ini <= fim) {
+            int terco1 = ini + (fim - ini) / 3;
+            int terco2 = fim - (fim - ini) / 3;
+
+            if (vetor[terco1] == chave) return terco1;
+            if (vetor[terco2] == chave) return terco2;
+
+            if (chave < vetor[terco1]) {
+                return buscaTernariaAux(chave, vetor, ini, terco1 - 1);
+            } else if (chave > vetor[terco2]) {
+                return buscaTernariaAux(chave, vetor, terco2 + 1, fim);
+            } else {
+                return buscaTernariaAux(chave, vetor, terco1 + 1, terco2 - 1);
+            }
+        }
+
+        return -1;
+    }
+
+    public static int buscaSalto(int chave, int vetor[]) {
+        Ordenacao.quickSort(vetor);
+
+        int n = vetor.length;
+        int passo = (int) Math.floor(Math.sqrt(n));
+        int prev = 0;
+
+        while (vetor[Math.min(passo, n) - 1] < chave) {
+            prev = passo;
+            passo += (int) Math.floor(Math.sqrt(n));
+            if (prev >= n) return -1;
+        }
+
+        while (prev < Math.min(passo, n)) {
+            if (vetor[prev] == chave) {
+                return prev;
+            }
+            prev++;
+        }
+
+        return -1;
+    }
 }
