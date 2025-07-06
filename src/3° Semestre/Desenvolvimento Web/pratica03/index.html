@@ -1,82 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volt Express</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    
     <header>
-        <img src="" alt="Logo Volt Express">
-
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Sobre Nós</li>
-                <li>Serviços</li>
-                <li>Solicitar Orçamento</li>
-                <li>Contato</li>
-            </ul>
-        </nav>
-
-        <button>
-            <a href="#">Solicitar Orçamento</a>
-        </button>
+        <div class="container">
+            <div class="logo">Volt Express</div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#problemas">Problemas comuns</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                </ul>
+            </nav>
+            <a href="#orcamento" class="btn-header">Solicitar Serviço</a>
+        </div>
     </header>
 
-    <main>
-        <h1>Conserto de Patinete Elétrico Blumenau</h1>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>LOGIN</h3>
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" placeholder="Informe seu usuário">
 
-        <section>
-            <article>
+            <label for="senha">Senha</label>
+            <div class="senha-wrapper">
+                <input type="password" id="senha" placeholder="Informe sua senha">
+                <span class="toggle-visibility" onclick="toggleSenha()">👁️</span>
+            </div>
+
+            <button onclick="fazerLogin()">Fazer Login</button>
+        </div>
+    </div>
+
+
+    <section class="hero">
+        <div class="container">
+            <h1>Especialistas em Conserto de Patinetes Elétricos</h1>
+            <p>Atendimento rápido e técnico para manter seu patinete em movimento.</p>
+            <a href="#orcamento" class="btn-main">Solicite seu orçamento</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="section">
+        <div class="container two-columns">
+            <div>
                 <h2>Assistência Técnica Especializada</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam inventore ab dignissimos recusandae error consequuntur ipsam earum delectus repellendus, placeat nihil eum vitae voluptatum dolor minima porro nam ad.
-                Delectus, dolores dicta! Quod optio enim animi, unde rerum harum maxime dolorum tenetur saepe. Sed magnam quia consectetur nam accusantium tempora delectus, quod at consequuntur suscipit quaerat? Explicabo, corrupti quod!</p>
-            </article>
+                <p>Somos uma empresa localizada em Blumenau especializada em manutenção de patinetes elétricos de todas
+                    as marcas. Nosso time é composto por técnicos altamente qualificados e apaixonados por mobilidade
+                    elétrica.</p>
+                <p>Garantimos diagnósticos precisos, peças originais e atendimento de qualidade. Seu patinete volta à
+                    ativa com total segurança e desempenho.</p>
+            </div>
+            <img src="https://img.icons8.com/ios/200/scooter.png" alt="Ícone patinete elétrico" />
+        </div>
+    </section>
 
-            <article>
-                <img src="" alt="Imagem promocional patinete">
-            </article>
-        </section>
+    <section id="beneficios" class="section light">
+        <div class="container">
+            <h2>Por que contar com uma assistência técnica especializada?</h2>
+            <p>Buscar profissionais experientes evita gastos desnecessários e prolonga a vida útil do seu patinete. Uma
+                assistência especializada oferece diagnóstico preciso, manutenção com garantia e peças originais — tudo
+                com transparência e rapidez.</p>
+        </div>
+    </section>
 
-        <section>
-            <article>
-                <h2>Porquê buscar por uma assistência técnica especializada em conserto de patinete</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam inventore ab dignissimos recusandae error consequuntur ipsam earum delectus repellendus, placeat nihil eum vitae voluptatum dolor minima porro nam ad.
-                Delectus, dolores dicta! Quod optio enim animi, unde rerum harum maxime dolorum tenetur saepe. Sed magnam quia consectetur nam accusantium tempora delectus, quod at consequuntur suscipit quaerat? Explicabo, corrupti quod!</p>
-            </article>
-        </section>
-
-        <section>
-            <article>
-                <h2>Principais problemas de patinetes eletricos</h2>
-            </article>
-
-            <article>
+    <section id="problemas" class="section">
+        <div class="container two-columns">
+            <img src="https://img.icons8.com/ios/200/error--v1.png" alt="Alerta de erro" />
+            <div>
+                <h2>Principais problemas de patinetes elétricos</h2>
                 <ul>
-                    <li><strong>Lorem ipsum dolor sit amet</strong> consectetur adipisicing elit. Odio, maxime. Ab aliquam distinctio blanditiis expedita non voluptate aspernatur nam optio magni sapiente. Cupiditate modi dolorem, earum debitis quo tempore odio.</li>
-                    <li><strong>Lorem ipsum dolor sit amet</strong> consectetur adipisicing elit. Voluptatem laboriosam voluptatum, aut nulla voluptate illum ab at, officia enim ducimus assumenda asperiores quibusdam odit provident est? Porro, cum aspernatur. Adipisci.</li>
-                    <li><strong>Lorem ipsum dolor sit amet</strong> consectetur adipisicing elit. Nisi beatae itaque repudiandae necessitatibus illo aliquid facilis ratione veniam neque commodi praesentium quia, modi id magni provident adipisci. Deserunt, quis ipsum.</li>
-                    <li><strong>Lorem ipsum dolor sit amet</strong> consectetur adipisicing elit. Laborum, quis! Labore temporibus repudiandae minus corporis quidem! Ducimus cumque atque fugit quaerat nisi? Fuga quas beatae sit officia, sequi cum reprehenderit.</li>
+                    <li><strong>Problemas na bateria:</strong> descarregando rápido ou não carregando.</li>
+                    <li><strong>Falhas no motor:</strong> perda de potência ou barulhos incomuns.</li>
+                    <li><strong>Freios com mau funcionamento:</strong> risco de acidentes.</li>
+                    <li><strong>Desgaste nos pneus e rodas:</strong> compromete a estabilidade.</li>
                 </ul>
-            </article>
-        </section>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <article>
-                <h2>Onde Nossa Assistência técnica de Patinete fica localizada</h2>
-            </article>
+    <section id="localizacao" class="section light">
+        <div class="container">
+            <h2>Onde estamos localizados</h2>
+            <p>Rua XV de Novembro, 759 - Centro, Blumenau - SC</p>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.468595310789!2d-49.06626849970032!3d-26.920355232507653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df18c1d764aec9%3A0x117891d444b94781!2sShopping%20H!5e0!3m2!1spt-BR!2sbr!4v1751839989010!5m2!1spt-BR!2sbr"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
 
-            <article>
-                <gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID" style="height: 400px"></gmp-map>
-            </article>
-        </section>
-    </main>
+    <footer>
+        <div class="container">
+            <p>© 2025 PatineteTech | Todos os direitos reservados</p>
+        </div>
+    </footer>
 
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=maps,marker"
-    defer></script>
+    <script>
+        document.querySelectorAll('.btn-header, .btn-main').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById("loginModal").style.display = "flex";
+            });
+        });
+
+        window.onclick = function (event) {
+            const modal = document.getElementById("loginModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        function toggleSenha() {
+            const input = document.getElementById("senha");
+            input.type = input.type === "password" ? "text" : "password";
+        }
+
+        function fazerLogin() {
+            alert("Login enviado! (a ser implementado)");
+            document.getElementById("loginModal").style.display = "none";
+        }
+    </script>
+
 
 </body>
+
 </html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volt Express</title>
+
+  <link rel="stylesheet" href="servicos.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Volt Express</div>
+      <nav>
+        <ul>
+          <li><a href="./index.html#sobre">Sobre</a></li>
+          <li><a href="./index.html#beneficios">Benefícios</a></li>
+          <li><a href="./index.html#problemas">Problemas comuns</a></li>
+          <li><a href="./servicos.html">Serviços</a></li>
+          <li><a href="./index.html#localizacao">Localização</a></li>
+        </ul>
+      </nav>
+      <a href="#orcamento" class="btn-header">Solicitar Serviço</a>
+    </div>
+  </header>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h3>LOGIN</h3>
+      <label for="usuario">Usuário</label>
+      <input type="text" id="usuario" placeholder="Informe seu usuário">
+
+      <label for="senha">Senha</label>
+      <div class="senha-wrapper">
+        <input type="password" id="senha" placeholder="Informe sua senha">
+        <span class="toggle-visibility" onclick="toggleSenha()">👁️</span>
+      </div>
+
+      <button onclick="fazerLogin()">Fazer Login</button>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <div class="container">
+      <h1>Especialistas em Conserto de Patinetes Elétricos</h1>
+      <p>Atendimento rápido e técnico para manter seu patinete em movimento.</p>
+      <a href="#orcamento" class="btn-main">Solicite seu orçamento</a>
+    </div>
+  </section>
+
+  <section id="servicos" class="section">
+    <div class="container">
+      <h2>Patinetes que ofertamos serviços</h2>
+      <div class="grid-patinetes">
+        <div class="card">
+          <img src="/images/scooter-atuprop.avif" alt="Patinete">
+          <ul>
+            <li><strong>Modelo:</strong> Scooter Autopropelido</li>
+            <li><strong>Voltagem:</strong> 36V</li>
+            <li><strong>RPM:</strong> 3000</li>
+            <li><strong>Carregador:</strong> Padrão Bivolt</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="./images/bicicleta-scooter.avif" alt="Patinete">
+          <ul>
+            <li><strong>Modelo:</strong> Bicicleta Scooter</li>
+            <li><strong>Voltagem:</strong> 48V</li>
+            <li><strong>RPM:</strong> 3200</li>
+            <li><strong>Carregador:</strong> TurboCharge 48V</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="./images/patinete-dobravel.png" alt="Patinete">
+          <ul>
+            <li><strong>Modelo:</strong> Patinete Dobravel</li>
+            <li><strong>Voltagem:</strong> 24V</li>
+            <li><strong>RPM:</strong> 2800</li>
+            <li><strong>Carregador:</strong> EcoPlug Mini</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="./images/patinete-droid-plus.jpg" alt="Patinete">
+          <ul>
+            <li><strong>Modelo:</strong> Patinete Droid Plus</li>
+            <li><strong>Voltagem:</strong> 36V</li>
+            <li><strong>RPM:</strong> 3500</li>
+            <li><strong>Carregador:</strong> Carga Rápida</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="./images/patinete-off-road.jpeg" alt="Patinete">
+          <ul>
+            <li><strong>Modelo:</strong> Patinete Off Road</li>
+            <li><strong>Voltagem:</strong> 60V</li>
+            <li><strong>RPM:</strong> 4000</li>
+            <li><strong>Carregador:</strong> PowerBoost</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="./images/patinete-scooter.jpeg" alt="Patinete">
+          <ul>
+            <li><strong>Modelo:</strong> Patinete Scooter</li>
+            <li><strong>Voltagem:</strong> 36V</li>
+            <li><strong>RPM:</strong> 2900</li>
+            <li><strong>Carregador:</strong> Portátil Slim</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 PatineteTech | Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.btn-header, .btn-main').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById("loginModal").style.display = "flex";
+      });
+    });
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("loginModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    function toggleSenha() {
+      const input = document.getElementById("senha");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    function fazerLogin() {
+      alert("Login enviado! (a ser implementado)");
+      document.getElementById("loginModal").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
