@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -17,10 +18,18 @@ body {
     margin: auto;
 }
 
+/* Cabeçalho */
 header {
     background-color: #222;
     color: #fff;
     padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 header .logo {
@@ -37,22 +46,60 @@ nav ul {
 nav a {
     color: #fff;
     text-decoration: none;
+    font-weight: 500;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+nav a:hover {
+    text-decoration: underline;
 }
 
-.btn-header {
+.grid-patinetes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.btn-header,
+.btn-main {
     background-color: #f7c844;
     color: #000;
     padding: 10px 15px;
     border-radius: 5px;
     font-weight: bold;
     text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-main {
+    background-color: #222;
+    color: #fff;
+}
+
+.btn-header:hover,
+.btn-main:hover {
+    background-color: #e6b939;
 }
 
 .hero {
@@ -69,14 +116,6 @@ header .container {
 .hero p {
     font-size: 18px;
     margin-bottom: 25px;
-}
-
-.btn-main {
-    background-color: #222;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
 }
 
 .section {
@@ -107,19 +146,19 @@ ul li {
     margin-bottom: 10px;
 }
 
-.map iframe {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    height: 300px;
-}
-
 footer {
     background-color: #222;
     color: #ccc;
     text-align: center;
     padding: 20px 0;
     font-size: 14px;
+}
+
+.map iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    height: 300px;
 }
 
 .modal {
@@ -187,6 +226,19 @@ footer {
 .modal-content button:hover {
     background-color: #444;
 }
+
+.toggle-visibility {
+  position: absolute;
+  top: 25%;
+  right: 12px;
+  transform: translateY(-100%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  user-select: none;
+  fill: #666;
+}
+
 
 .senha-wrapper {
     position: relative;
