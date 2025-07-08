@@ -14,14 +14,17 @@
 
     <header>
         <div class="container">
-            <div class="logo">Volt Express</div>
+            <div class="logo">
+                <img src="image.png" alt="logo">
+                Volt Express
+            </div>
             <nav>
                 <ul>
-                    <li><a href="cliente.html">Painel</a></li>
-                    <li><a href="solicitar-orçamento.html">Solicitar Orçamento</a></li>
-                    <li><a href="verifica-endereco.html">Verefica Endereço</a></li>
-                    <li><a href="index.html" class="btn-header">Logout</a></li>
+                    <li><a href="cliente.html" class="btn-header">Painel</a></li>
+                    <li><a href="solicitar-orçamento.html" class="btn-header">Solicitar Orçamento</a></li>
+                    <li><a href="verifica-endereco.html" class="btn-header">Verefica Endereço</a></li>
                     <li><a id="toggleTheme" class="btn-header">🌙 Alternar Tema</a></li>
+                    <li><a href="index.html" class="btn-header">Logout</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,8 +37,16 @@
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Seu nome completo" required>
 
-                <label for="modelo">Modelo do Patinete:</label>
-                <input type="text" id="modelo" placeholder="Ex: Scooter X12" required>
+                <label for="modelo">Selecione o modelo do patinete:</label>
+                <select id="modelo" name="modelo">
+                    <option value="scooter-autopropelido">Scooter Autopropelido</option>
+                    <option value="bicicleta-scooter">Bicicleta Scooter</option>
+                    <option value="patinete-dobravel">Patinete Dobravel</option>
+                    <option value="droid-plus">Droid Plus</option>
+                    <option value="off-road">Off Road</option>
+                    <option value="patinete-scooter">Patinete Scooter</option>
+                    <option value="outro">Outro Modelo</option>
+                </select>
 
                 <label for="problema">Descrição do Problema:</label>
                 <textarea id="problema" rows="4" placeholder="Descreva o problema" required></textarea>
