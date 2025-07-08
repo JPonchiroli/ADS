@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Orçamento</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="orcamento.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Volt Express</div>
+            <nav>
+                <ul>
+                    <li><a href="cliente.html">Painel</a></li>
+                    <li><a href="solicitar-orçamento.html">Solicitar Orçamento</a></li>
+                    <li><a href="verifica-endereco.html">Verefica Endereço</a></li>
+                    <li><a href="index.html" class="btn-header">Logout</a></li>
+                    <li><a id="toggleTheme" class="btn-header">🌙 Alternar Tema</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" id="solicitar">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Solicitar Novo Orçamento</h2>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Seu nome completo" required>
+
+                <label for="modelo">Modelo do Patinete:</label>
+                <input type="text" id="modelo" placeholder="Ex: Scooter X12" required>
+
+                <label for="problema">Descrição do Problema:</label>
+                <textarea id="problema" rows="4" placeholder="Descreva o problema" required></textarea>
+
+                <button type="submit">Enviar Solicitação</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Volt Express | Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('toggleTheme');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.innerText = '☀️ Alternar Tema';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            toggleButton.innerText = isDark ? '☀️ Alternar Tema' : '🌙 Alternar Tema';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+</body>
+
+</html>

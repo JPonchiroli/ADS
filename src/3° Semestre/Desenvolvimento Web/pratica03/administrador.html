@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Administrador</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tabela-admin.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Volt Express - Admin</div>
+            <nav>
+                <ul>
+                    <li><a href="administrador.html" class="btn-header">Painel</a></li>
+                    <li><a href="lucro.html" class="btn-header">Gráfico de Lucro</a></li>
+                    <li><a href="index.html" class="btn-header">Logout</a></li>
+                    <li><a id="toggleTheme" class="btn-header">🌙 Alternar Tema</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section light">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Painel Administrativo</h2>
+            <table id="adminTabela" class="display">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Modelo</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                        <th>Data Inicial</th>
+                        <th>Previsão de Entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>Xiaomi M365</td>
+                        <td>R$400</td>
+                        <td><strong>Há responder</strong></td>
+                        <td>07/07/2025</td>
+                        <td>17/07/2025</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Oliveira</td>
+                        <td>Segway Ninebot ES2</td>
+                        <td>R$250</td>
+                        <td><strong>Em andamento</strong></td>
+                        <td>06/07/2025</td>
+                        <td>16/07/2025</td>
+                    </tr>
+                    <tr>
+                        <td>Pedro Santos</td>
+                        <td>Xiaomi Pro 2</td>
+                        <td>R$320</td>
+                        <td><strong>Finalizado</strong></td>
+                        <td>01/07/2025</td>
+                        <td>08/07/2025</td>
+                    </tr>
+                    <tr>
+                        <td>Carla Dias</td>
+                        <td>TurboScooter Max</td>
+                        <td>R$380</td>
+                        <td><strong>Há responder</strong></td>
+                        <td>05/07/2025</td>
+                        <td>15/07/2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Volt Express | Administração</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#adminTabela').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                }
+            });
+        });
+
+        const toggleButton = document.getElementById('toggleTheme');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.innerText = '☀️ Alternar Tema';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            toggleButton.innerText = isDark ? '☀️ Alternar Tema' : '🌙 Alternar Tema';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+
+</html>

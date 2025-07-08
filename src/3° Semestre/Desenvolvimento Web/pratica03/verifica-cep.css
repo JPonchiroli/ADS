@@ -1,0 +1,60 @@
+.cep-check {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cep-check label,
+.cep-check input,
+.cep-check button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.cep-check input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.cep-check button {
+  background-color: #f7c844;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cep-check button:hover {
+  background-color: #e6b939;
+}
+
+.cep-check .resultado {
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cep-check .sem-taxa {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.cep-check .com-taxa {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.cep-check .sem-entrega {
+  background-color: #f8d7da;
+  color: #721c24;
+}

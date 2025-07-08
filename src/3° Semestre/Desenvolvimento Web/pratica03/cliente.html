@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Cliente</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tabela.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Volt Express</div>
+            <nav>
+                <ul>
+                    <li><a href="cliente.html">Painel</a></li>
+                    <li><a href="solicitar-orçamento.html">Solicitar Orçamento</a></li>
+                    <li><a href="verifica-endereco.html">Verefica Endereço</a></li>
+                    <li><a href="index.html" class="btn-header">Logout</a></li>
+                    <li><a id="toggleTheme" class="btn-header">🌙 Alternar Tema</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section light" id="painel">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Painel do Cliente</h2>
+            <table id="orcamentoTabela" class="display">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome Cliente</th>
+                        <th>Modelo Patinete</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                        <th>Primeiro Contato</th>
+                        <th>Previsão Entrega</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>João Silva</td>
+                        <td>Xiaomi M365</td>
+                        <td>R$400</td>
+                        <td><strong>Aguardando resposta</strong></td>
+                        <td>07/07/2025</td>
+                        <td>17/07/2025</td>
+                        <td><a href="#">Editar</a> | <a href="#">Excluir</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Volt Express | Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#orcamentoTabela').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                }
+            });
+        });
+
+        const toggleButton = document.getElementById('toggleTheme');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.innerText = '☀️ Alternar Tema';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            toggleButton.innerText = isDark ? '☀️ Alternar Tema' : '🌙 Alternar Tema';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+</body>
+
+</html>

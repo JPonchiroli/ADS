@@ -1,0 +1,70 @@
+/* Estilo específico para a página de solicitação de orçamento */
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdfdfd;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #f7c844;
+    outline: none;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    background-color: #f7c844;
+    color: #000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #e6b939;
+}
+
+/* Ajuste responsivo */
+@media screen and (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    form button[type="submit"] {
+        width: 100%;
+    }
+}

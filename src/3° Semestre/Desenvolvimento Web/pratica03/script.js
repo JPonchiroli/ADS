@@ -28,9 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.fazerLogin = function () {
-    alert("Login enviado! (a ser implementado)");
+    const usuario = document.getElementById("usuario").value.trim().toLowerCase();
+
+    if (!usuario) {
+      alert("Por favor, informe o nome de usuário.");
+      return;
+    }
+
+    switch (usuario) {
+      case "admin":
+        window.location.href = "administrador.html";
+        break;
+      case "cliente":
+        window.location.href = "cliente.html";
+        break;
+      default:
+        alert("Usuário não reconhecido.");
+        break;
+    }
+
+    // Fecha o modal após o login (se quiser manter esse comportamento)
+    const modal = document.getElementById("loginModal");
     if (modal) {
       modal.style.display = "none";
     }
   };
 });
+
