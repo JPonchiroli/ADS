@@ -1,13 +1,20 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
-const port = 3000;
+const port = 3001;
 
-let usuarios = [
-    {id: 1, nome: 'Celso'},
-    {id: 2, nome: 'Maria'},
-    {id: 3, nome: 'Carlos'},
-    {id: 4, nome: 'Ana Paula'},
-]
+const cors = require('cors')
+app.use(cors())
+
+
+const readUsuarios = () => {
+    const dados = fs.readFileSync('./usuarios.json')
+    return JSON.parse(dados)
+}
+
+const writeUsuarios = (dados) => {
+    fs.writeFileSync('./usuarios.json', JSON.stringify(dados, null, 2))
+}
 
 app.use(express.json());
 
@@ -16,10 +23,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/usuarios', (req, res) => {
-    res.json(usuarios)
+    const usuarios = readUsuarios();
+    res.json(usuarios);
 });
 
 app.get('/usuarios/:id', (req, res) => {
+    const usuarios = readUsuarios();
     const id = parseInt(req.params.id);
     const usuario = usuarios.find(a => a.id === parseInt(id));
     if (usuario) {
@@ -30,15 +39,22 @@ app.get('/usuarios/:id', (req, res) => {
 });
 
 app.delete('/usuarios/:id', (req, res) => {
+    let usuarios = readUsuarios()
     const id = parseInt(req.params.id);
-    usuario = usuarios.filter(a => a.id !== id);
+    usuarios = usuarios.filter(a => a.id !== id);
+    writeUsuarios(usuarios)
     res.json({message: `O usuário id:${id} foi excluido com sucesso`})
 });
 
 app.post('/usuarios', (req, res) => {
-    const cadastraUsuario = { id: usuarios.length + 1, nome: req.body.nome }
-    usuarios.push(cadastraUsuario)
-    res.status(201).json(cadastraUsuario)
+    const usuarios = readUsuarios()
+    const novo_usuario = {
+        id: usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
+        nome: req.body.nome
+    }
+    usuarios.push(novo_usuario)
+    writeUsuarios(usuarios)
+    res.status(201).json(novo_usuario)
 })
 
 app.listen(port, () => {
