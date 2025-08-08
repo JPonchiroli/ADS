@@ -46,6 +46,21 @@ app.delete('/usuarios/:id', (req, res) => {
     res.json({message: `O usuário id:${id} foi excluido com sucesso`})
 });
 
+app.put('/usuarios/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const { nome } = req.body;
+    let usuarios = readUsuarios();
+    const usuario = usuarios.find(u => u.id === id);
+
+    if (!usuario) {
+        return res.status(404).json({ message: "Usuário não encontrado" });
+    }
+
+    usuario.nome = nome;
+    writeUsuarios(usuarios);
+    res.json({ mensagem: `Usuário id:${id} atualizado com sucesso`, usuario });
+});
+
 app.post('/usuarios', (req, res) => {
     const usuarios = readUsuarios()
     const novo_usuario = {

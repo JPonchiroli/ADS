@@ -1,36 +1,38 @@
-import React, { useState } from "react";
-import axios from 'axios'
+import { useState } from 'react';
+import axios from 'axios';
 
-function UsuariosForm() {
+function UsuariosForm({ onUsuarioAdicionado }) {
     const [nomeUsuario, setNomeUsuario] = useState("")
-    const [mensagem, setMensagem] = useState("")
+    const [error, setError] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            await axios.post('http://localhost:3001/usuarios', { nome: nomeUsuario });
-            setMensagem("Usuário cadastrado com sucesso!");
-            window.location.reload();
-        } catch (error) {
-            setMensagem("Erro ao cadastrar usuário.");
+        if (!nomeUsuario.trim()) {
+            setError("O nome é obrigatório")
+            return
+        }
+        await axios.post("http://localhost:3001/usuarios", { nome: nomeUsuario });
+        setNomeUsuario("");
+        if (onUsuarioAdicionado) {
+            onUsuarioAdicionado();
         }
     }
 
     return (
-        <div>  
+        <div>
             <form onSubmit={handleSubmit}>
-                <h3>Cadastre novos usuários:</h3>
-                <input 
-                    type="text" 
-                    placeholder="Informe um usuário" 
-                    value={nomeUsuario} 
-                    onChange={(e) => setNomeUsuario(e.target.value)} 
-                    required={true}/>
-                <button type="submit">Enviar</button>
+                <label>Nome do usuário:</label>
+                <input
+                    type="text"
+                    value={nomeUsuario}
+                    onChange={(e) => setNomeUsuario(e.target.value)}
+                />
+                <button type="submit">Salvar</button>
+                {error && <p style={{ color: "red" }}> {error} </p>}
             </form>
-            {mensagem && <p>{mensagem}</p>}
         </div>
-    )
-}
+    );
+
+    }
 
 export default UsuariosForm;

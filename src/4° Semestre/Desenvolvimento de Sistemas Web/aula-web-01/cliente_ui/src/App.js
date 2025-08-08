@@ -1,16 +1,20 @@
-import React from "react";
 import UsuariosList from "./components/UsuariosList";
 import UsuariosForm from "./components/UsuariosForm";
-import axios from 'axios'
-
+import { useState } from "react";
 
 function App() {
+  const [usuarioAtualizados, setUsuariosAtualizados] = useState(false);
+
+  const handleAtualizaLista = () => {
+    setUsuariosAtualizados((prev) => !prev)
+  }
+
   return (
-   <div>
-      <h1>Gerenciamento de Usuários - UniSenai</h1>
-      <UsuariosForm />
-      <UsuariosList />
-   </div>
+    <div>
+      <h1>GERENCIAMENTO DE USUÁRIOS</h1>
+      <UsuariosForm onUsuarioAdicionado={handleAtualizaLista}/>
+      <UsuariosList atualizar={usuarioAtualizados}/>
+    </div>
   );
 }
 
