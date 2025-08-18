@@ -1,25 +1,23 @@
-import Footer from "./components/footer"
+import { Route, BrowserRouter, Routes } from "react-router-dom"
+
 import Header from "./components/header"
+import MainPage from "./pages/mainpage"
+import ContactPage from "./pages/contactpage"
+import Footer from "./components/footer"
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <main>
-        <div className='flex flex-col items-center p-8 bg-red-300 min-h-screen'>
-          <h1 className="font-bold text-shadow-lg text-3xl">Bem-vindo REACT+VITE+TAILWINDCSS</h1>
-          <p className="text-sm mt-10">Página web interativas e responsivas</p>
-
-          <hr className="border-01 w-full"/>
-
-          <p className="text-sm mt-10">Quer saber como funciona</p>
-          <label className="border-2 border-black rounded-lg px-3 mt-2 bg-red-500 text-white">Clique aqui</label>
-        </div>
-
+        <Routes>
+            <Route path="/" element={<MainPage />}>  </Route>
+            <Route path="/contatos" element={<ContactPage />}> </Route>
+        </Routes>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
