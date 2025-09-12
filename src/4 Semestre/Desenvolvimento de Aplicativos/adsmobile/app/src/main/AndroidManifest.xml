@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Adsmobile">
+
+        <!-- Activity principal -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Adsmobile">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Aula 2 Exercicio 1 está em com.example.app_01 -->
+        <activity android:name="com.example.ads_mobile.Aula2Exercicio1Activity" />
+
+        <!-- LoggedScreen está em com.example.ads_mobile -->
+        <activity android:name="com.example.ads_mobile.LoggedScreen" />
+
+        <activity android:name="com.example.ads_mobile.Aula3e4Activity" />
+
+        <activity android:name="com.example.ads_mobile.MiniCalculadoraActivity" />
+
+    </application>
+
+</manifest>
